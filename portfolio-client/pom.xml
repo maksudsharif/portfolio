@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>portfolio</artifactId>
+    <groupId>com.maksudsharif</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>portfolio-client</artifactId>
+  <packaging>pom</packaging>
+  <name>portfolio-client</name>
+  <description>Client application for Portfolio</description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>1.7.6</version>
+        <executions>
+          <execution>
+            <!-- optional: you don't really need execution ids, but it looks nice in your build log. -->
+            <id>Download and Install: Node and Yarn</id>
+            <goals>
+              <goal>install-node-and-yarn</goal>
+            </goals>
+            <!-- optional: default phase is "generate-resources" -->
+            <phase>generate-resources</phase>
+            <configuration>
+              <nodeVersion>v12.7.0</nodeVersion>
+              <yarnVersion>v1.17.3</yarnVersion>
+
+              <!-- optional: where to download node from. Defaults to https://nodejs.org/dist/ -->
+              <nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>
+              <!-- optional: where to download yarn from. Defaults to https://github.com/yarnpkg/yarn/releases/download/ -->
+              <yarnDownloadRoot>https://github.com/yarnpkg/yarn/releases/download/</yarnDownloadRoot>
+            </configuration>
+          </execution>
+          <!-- Install all project dependencies -->
+          <execution>
+            <id>Yarn: Pull Dependencies</id>
+            <goals>
+              <goal>yarn</goal>
+            </goals>
+            <!-- optional: default phase is "generate-resources" -->
+            <phase>generate-resources</phase>
+            <configuration>
+              <!-- optional: The default argument is actually
+              "install", so unless you need to run some other yarn command,
+              you can remove this whole <configuration> section.
+              -->
+              <arguments/>
+            </configuration>
+          </execution>
+          <!-- Install all project dependencies -->
+          <execution>
+            <id>Yarn: Production Build</id>
+            <goals>
+              <goal>yarn</goal>
+            </goals>
+            <!-- optional: default phase is "generate-resources" -->
+            <phase>generate-resources</phase>
+            <!-- Optional configuration which provides for running any npm command -->
+            <configuration>
+              <arguments>build --prod</arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>target/</directory>
+            </fileset>
+            <fileset>
+              <directory>dist/</directory>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

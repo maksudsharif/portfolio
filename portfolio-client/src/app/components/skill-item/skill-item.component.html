@@ -1,0 +1,20 @@
+<div class="resume-skill-item">
+  <h4 class="resume-skills-cat font-weight-bold">{{ skill.name }}</h4>
+  <ul *ngIf="skill.type === SkillItemType.BAR" class="list-unstyled mb-4">
+    <li *ngFor="let skill of skill.skills" class="mb-2">
+      <div class="resume-skill-name" style="justify-content: space-between; display: flex">
+        <span>{{ skill.name }}</span>
+        <span>{{ skill.years }} years</span>
+      </div>
+      <div class="progress resume-progress">
+        <div class="progress-bar theme-progress-bar-dark" role="progressbar" [ngStyle]="{'width': skill.findLevel()}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </li>
+  </ul>
+
+  <ul *ngIf="skill.type === SkillItemType.BADGE" class="list-inline">
+    <li *ngFor="let skill of skill.skills" class="list-inline-item">
+      <span class="badge badge-light">{{ skill.name }}</span>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,10 @@
+<section class="resume-section education-section mb-5">
+  <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Education</h2>
+  <div *ngIf="education" class="resume-section-content">
+    <ul class="list-unstyled">
+      <div *ngFor="let ed of education.educations" class="resume-skill-item">
+        <app-education-item [education]="ed"></app-education-item>
+      </div>
+    </ul>
+  </div>
+</section>
