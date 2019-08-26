@@ -12,3 +12,8 @@ Source for https://maksudsharif.com
 - Angular 7
 - Webpack
 - Angular CLI
+
+## Deployment
+- HAProxy
+- Varnish
+- Ubuntu
