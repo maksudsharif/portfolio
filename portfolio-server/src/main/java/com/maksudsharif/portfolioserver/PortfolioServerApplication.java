@@ -5,6 +5,7 @@ import com.maksudsharif.portfolioserver.model.Profile;
 import com.maksudsharif.portfolioserver.model.Skill;
 import com.maksudsharif.portfolioserver.model.SkillGroup;
 import com.maksudsharif.portfolioserver.model.SkillTypeView;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +15,9 @@ import java.util.List;
 @SpringBootApplication
 public class PortfolioServerApplication
 {
+
+    @Value("${portfolio.showProfileImage}")
+    private boolean showProfileImages;
 
     public static void main(String[] args)
     {
@@ -34,7 +38,7 @@ public class PortfolioServerApplication
         profile.setPersonalSiteTitle("maksudsharif.com");
         profile.setGithub("https://github.com/maksudsharif");
         profile.setGithubTitle("github.com/maksudsharif");
-        profile.setShowProfileImage(false);
+        profile.setShowProfileImage(showProfileImages);
 
         profile.setSummary("Driven software engineer with over 4 years of professional experience and proven ability leading development and delivery of secure high-performance cloud applications. " +
                 "Skilled in full-stack enterprise Java development throughout the software development lifecycle including analysis, design, implementation, and testing. " +
