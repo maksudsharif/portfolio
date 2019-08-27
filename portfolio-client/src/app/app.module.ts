@@ -13,8 +13,6 @@ import {EducationItemComponent} from './components/education-item/education-item
 import {LanguagesComponent} from './components/languages/languages.component';
 import {InterestsComponent} from './components/interests/interests.component';
 import {SkillItemComponent} from './components/skill-item/skill-item.component';
-import {WorkItemComponent} from './components/work-item/work-item.component';
-import {SafePipe} from './pipes/safe-pipe/safe.pipe';
 import {ProfileService} from './services/profile/profile.service';
 import {CacheService} from './services/cache/cache.service';
 import {ClearanceComponent} from './components/clearance/clearance.component';
@@ -36,9 +34,7 @@ import {BrowserModule} from '@angular/platform-browser';
     LanguagesComponent,
     InterestsComponent,
     SkillItemComponent,
-    WorkItemComponent,
-    ClearanceComponent,
-    SafePipe,
+    ClearanceComponent
   ],
   imports: [
     BrowserModule,
