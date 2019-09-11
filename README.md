@@ -9,7 +9,7 @@ Source for https://maksudsharif.com
 - Lombok
 
 ## Client
-- Angular 7
+- Angular 8
 - Webpack
 - Angular CLI
 
