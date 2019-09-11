@@ -40,9 +40,7 @@ public class PortfolioServerApplication
         profile.setGithubTitle("github.com/maksudsharif");
         profile.setShowProfileImage(showProfileImages);
 
-        profile.setSummary("Driven software engineer with over 4 years of professional experience and proven ability leading development and delivery of secure high-performance cloud applications. " +
-                "Skilled in full-stack enterprise Java development throughout the software development lifecycle including analysis, design, implementation, and testing. " +
-                "Also experienced with operations, maintenance, troubleshooting, monitoring, and automated deployment of applications to on-premise and cloud environments. Ask me about my homelab!");
+        profile.setSummary("Driven software engineer with over 8 years of technical experience and proven ability leading development and delivery of secure high-performance cloud applications. Skilled in full-stack enterprise Java development throughout the software development life-cycle including analysis, design, implementation, and testing. Also experienced with operations, maintenance, troubleshooting, monitoring, and automated deployment of applications to on-premise and cloud environments. Ask me about my homelab!");
 
         Education education = Education.builder()
                 .addendum("(Coursework Towards)")
@@ -60,6 +58,12 @@ public class PortfolioServerApplication
                         .build()
                 , Skill.builder()
                         .name("Spring Boot")
+                        .build()
+                , Skill.builder()
+                        .name("SQL")
+                        .build()
+                , Skill.builder()
+                        .name("ORM")
                         .build()
                 , Skill.builder()
                         .name("Solr")
@@ -81,6 +85,9 @@ public class PortfolioServerApplication
                         .build()
                 , Skill.builder()
                         .name("AngularJS")
+                        .build()
+                , Skill.builder()
+                        .name("Typescript")
                         .build()
                 , Skill.builder()
                         .name("Angular")
@@ -109,22 +116,31 @@ public class PortfolioServerApplication
                 , Skill.builder()
                         .name("Apache Geode")
                         .build()
+                , Skill.builder()
+                        .name("Spring Security")
+                        .build()
+                , Skill.builder()
+                        .name("Spring Integration")
+                        .build()
+                , Skill.builder()
+                        .name("Apache Camel")
+                        .build()
         );
 
         List<Skill> programmingSkills = List.of(
                 Skill.builder()
                         .name("Java")
-                        .level("98")
+                        .level("100")
                         .years("8")
                         .build()
                 , Skill.builder()
                         .name("Javascript")
-                        .level("85")
+                        .level("50")
                         .years("4")
                         .build()
                 , Skill.builder()
                         .name("Bash")
-                        .level("70")
+                        .level("25")
                         .years("2")
                         .build()
         );
@@ -172,14 +188,14 @@ public class PortfolioServerApplication
                 , Skill.builder()
                         .name("Spring Cloud")
                         .build()
+                , Skill.builder()
+                        .name("AmazonMQ")
+                        .build()
         );
 
         List<Skill> otherSkills = List.of(
                 Skill.builder()
-                        .name("Agile")
-                        .build()
-                , Skill.builder()
-                        .name("Scrum")
+                        .name("Gitlab")
                         .build()
                 , Skill.builder()
                         .name("JIRA")
@@ -196,12 +212,34 @@ public class PortfolioServerApplication
                 , Skill.builder()
                         .name("Team Management")
                         .build()
+                , Skill.builder()
+                        .name("Agile")
+                        .build()
+                , Skill.builder()
+                        .name("Scrum")
+                        .build()
         );
 
-        SkillGroup programmingLanguages = SkillGroup.builder().name("Programming Languages").skills(programmingSkills).type(SkillTypeView.BAR).build();
-        SkillGroup technologies = SkillGroup.builder().name("Technologies").skills(techSkills).type(SkillTypeView.BADGE).build();
-        SkillGroup cloud = SkillGroup.builder().name("Cloud/DevOps").skills(cloudSkills).type(SkillTypeView.BADGE).build();
-        SkillGroup other = SkillGroup.builder().name("Other").skills(otherSkills).type(SkillTypeView.BADGE).build();
+        SkillGroup programmingLanguages = SkillGroup.builder()
+                .name("Programming Languages")
+                .skills(programmingSkills)
+                .type(SkillTypeView.BAR)
+                .build();
+        SkillGroup technologies = SkillGroup.builder()
+                .name("Technologies")
+                .skills(techSkills)
+                .type(SkillTypeView.BADGE)
+                .build();
+        SkillGroup cloud = SkillGroup.builder()
+                .name("Cloud/DevOps")
+                .skills(cloudSkills)
+                .type(SkillTypeView.BADGE)
+                .build();
+        SkillGroup other = SkillGroup.builder()
+                .name("Other")
+                .skills(otherSkills)
+                .type(SkillTypeView.BADGE)
+                .build();
         profile.setSkills(List.of(programmingLanguages, technologies, cloud, other));
 
         return profile;
