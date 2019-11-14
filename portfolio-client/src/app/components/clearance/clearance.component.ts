@@ -9,6 +9,7 @@ import {ProfileService} from '../../services/profile/profile.service';
 export class ClearanceComponent implements OnInit {
   private profileService: ProfileService;
   clearance: string;
+  clearanceStatus: string;
 
   constructor(profileService: ProfileService) {
     this.profileService = profileService;
@@ -17,6 +18,7 @@ export class ClearanceComponent implements OnInit {
   ngOnInit() {
     this.profileService.getProfileInfo().subscribe(value => {
       this.clearance = value.clearance;
+      this.clearanceStatus = value.clearanceStatus;
     });
   }
 

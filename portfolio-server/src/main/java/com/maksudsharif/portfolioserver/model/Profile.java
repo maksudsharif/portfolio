@@ -21,6 +21,7 @@ public class Profile implements Serializable
     private String personalSite;
     private String personalSiteTitle;
     private String clearance;
+    private String clearanceStatus;
     private String summary;
     private List<Education> education;
     private List<String> interests;

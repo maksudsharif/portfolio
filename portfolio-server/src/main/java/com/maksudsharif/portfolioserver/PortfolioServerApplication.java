@@ -32,6 +32,7 @@ public class PortfolioServerApplication
         profile.setTitle("Software Engineer");
         profile.setEmail("maksudsharif@gmail.com");
         profile.setClearance("Secret");
+        profile.setClearanceStatus("Current");
         profile.setLinkedIn("https://linkedin.com/in/maksudsharif");
         profile.setLinkedInTitle("linkedin.com/in/maksudsharif");
         profile.setPersonalSite("https://maksudsharif.com");
