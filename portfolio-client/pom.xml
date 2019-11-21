@@ -65,7 +65,7 @@
             <phase>generate-resources</phase>
             <!-- Optional configuration which provides for running any npm command -->
             <configuration>
-              <arguments>build --prod --build-optimizer --vendor-chunk</arguments>
+              <arguments>build --prod --build-optimizer --vendor-chunk --base-href=/portfolio/ --deploy-url=/portfolio/</arguments>
             </configuration>
           </execution>
         </executions>
