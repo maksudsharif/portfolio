@@ -1,6 +1,6 @@
 import {ProfileService} from '../../services/profile/profile.service';
 import {Component, OnInit} from '@angular/core';
-import {ProfileInfo} from '../model/profileInfo';
+import {ProfileHeaderInfo} from "../model/profileHeaderInfo";
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ import {ProfileInfo} from '../model/profileInfo';
 export class HeaderComponent implements OnInit {
 
   private profileService: ProfileService;
-  profileInfo: ProfileInfo;
+  profileInfo: ProfileHeaderInfo;
   showProfileImage: boolean;
 
   constructor(profileService: ProfileService) {
@@ -18,9 +18,17 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.profileService.getProfileInfo().subscribe(value => {
-      // tslint:disable-next-line:max-line-length
-      this.profileInfo = new ProfileInfo(value.name, value.title, value.clearance, value.linkedIn, value.linkedInTitle, value.github, value.githubTitle, value.email, value.personalSiteTitle, value.showProfileImage);
+    this.profileService.getProfileHeaderInfo().subscribe(value => {
+      this.profileInfo = new ProfileHeaderInfo(
+        value.name
+        , value.title
+        , value.linkedIn
+        , value.linkedInTitle
+        , value.github
+        , value.githubTitle
+        , value.email
+        , value.personalSiteTitle
+        , value.showProfileImage);
     });
   }
 

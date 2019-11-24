@@ -1,14 +1,13 @@
 package com.maksudsharif.portfolioserver.web;
 
 import com.maksudsharif.portfolioserver.model.Profile;
+import com.maksudsharif.portfolioserver.model.ProfileHeader;
 import com.maksudsharif.portfolioserver.service.ProfileInfoService;
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Optional;
+import reactor.core.publisher.Mono;
 
 @AllArgsConstructor
 @RestController
@@ -16,10 +15,17 @@ public class ProfileInfoAPIController
 {
     private ProfileInfoService profileInfoService;
 
-    @GetMapping("/api/profile")
+    @GetMapping("/profile")
     @ResponseBody
-    public ResponseEntity<Profile> getProfile()
+    public Mono<Profile> getProfile()
     {
-        return ResponseEntity.of(Optional.ofNullable(profileInfoService.getProfile()));
+        return Mono.just(profileInfoService.getProfile());
+    }
+
+    @GetMapping("/profile/header")
+    @ResponseBody
+    public Mono<ProfileHeader> getProfileHeader()
+    {
+        return Mono.just(profileInfoService.getProfileHeader());
     }
 }
