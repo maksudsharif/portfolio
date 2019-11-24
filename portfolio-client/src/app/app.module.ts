@@ -9,7 +9,6 @@ import {SummaryComponent} from './components/summary/summary.component';
 import {WorkExperienceComponent} from './components/work-experience/work-experience.component';
 import {SkillsComponent} from './components/skills/skills.component';
 import {EducationComponent} from './components/education/education.component';
-import {EducationItemComponent} from './components/education-item/education-item.component';
 import {LanguagesComponent} from './components/languages/languages.component';
 import {InterestsComponent} from './components/interests/interests.component';
 import {SkillItemComponent} from './components/skill-item/skill-item.component';
@@ -30,7 +29,6 @@ import {BrowserModule} from '@angular/platform-browser';
     WorkExperienceComponent,
     SkillsComponent,
     EducationComponent,
-    EducationItemComponent,
     LanguagesComponent,
     InterestsComponent,
     SkillItemComponent,

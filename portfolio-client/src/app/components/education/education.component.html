@@ -2,9 +2,17 @@
   <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Education</h2>
   <div *ngIf="education" class="resume-section-content">
     <ul class="list-unstyled">
-      <div *ngFor="let ed of education.educations" class="resume-skill-item">
-        <app-education-item [education]="ed"></app-education-item>
-      </div>
+      <ng-container *ngFor="let ed of education.educations">
+        <li class="mb-2 resume-skill-item">
+          <div>
+            <span class="resume-degree font-weight-bold">{{ ed.title }}</span>
+            <small class="text-muted"> {{ ed.addendum }}</small>
+          </div>
+          <div class="resume-degree-org">{{ ed.institution }}</div>
+          <div class="resume-degree-time">{{ ed.range }}</div>
+        </li>
+      </ng-container>
     </ul>
+
   </div>
 </section>
