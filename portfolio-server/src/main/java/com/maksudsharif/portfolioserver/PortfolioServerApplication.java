@@ -53,80 +53,33 @@ public class PortfolioServerApplication
 
         profile.setInterests(List.of("Homelab", "Foodie", "Travel"));
 
-        List<Skill> techSkills = List.of(
-                Skill.builder()
-                        .name("Spring")
-                        .build()
-                , Skill.builder()
-                        .name("Spring Boot")
-                        .build()
-                , Skill.builder()
-                        .name("SQL")
-                        .build()
-                , Skill.builder()
-                        .name("ORM")
-                        .build()
-                , Skill.builder()
-                        .name("Solr")
-                        .build()
-                , Skill.builder()
-                        .name("ActiveMQ")
-                        .build()
-                , Skill.builder()
-                        .name("Hazelcast")
-                        .build()
-                , Skill.builder()
-                        .name("Alfresco")
-                        .build()
-                , Skill.builder()
-                        .name("PostgreSQL")
-                        .build()
-                , Skill.builder()
-                        .name("Apache Tomcat")
-                        .build()
-                , Skill.builder()
-                        .name("AngularJS")
-                        .build()
-                , Skill.builder()
-                        .name("Typescript")
-                        .build()
-                , Skill.builder()
-                        .name("Angular")
-                        .build()
-                , Skill.builder()
-                        .name("Git")
-                        .build()
-                , Skill.builder()
-                        .name("REST API")
-                        .build()
-                , Skill.builder()
-                        .name("Maven/Gradle")
-                        .build()
-                , Skill.builder()
-                        .name("NPM")
-                        .build()
-                , Skill.builder()
-                        .name("JMeter")
-                        .build()
-                , Skill.builder()
-                        .name("JUnit")
-                        .build()
-                , Skill.builder()
-                        .name("HTML/CSS")
-                        .build()
-                , Skill.builder()
-                        .name("Apache Geode")
-                        .build()
-                , Skill.builder()
-                        .name("Spring Security")
-                        .build()
-                , Skill.builder()
-                        .name("Spring Integration")
-                        .build()
-                , Skill.builder()
-                        .name("Apache Camel")
-                        .build()
-        );
+        List<Skill> techSkills = Skill.from(
+                "Spring"
+                , "Spring Boot"
+                , "SQL"
+                , "ORM"
+                , "Solr"
+                , "ActiveMQ"
+                , "Hazelcast"
+                , "Alfresco"
+                , "PostgreSQL"
+                , "Apache Tomcat"
+                , "AngularJS"
+                , "Typescript"
+                , "Angular"
+                , "Git"
+                , "REST API"
+                , "Maven"
+                , "NPM"
+                , "JMeter"
+                , "Karma/Jasmine/Protractor"
+                , "JUnit"
+                , "HTML/CSS"
+                , "Apache Geode"
+                , "Spring Security"
+                , "Spring Security"
+                , "Spring Integration"
+                , "Apache Camel");
 
         List<Skill> programmingSkills = List.of(
                 Skill.builder()
@@ -146,80 +99,32 @@ public class PortfolioServerApplication
                         .build()
         );
 
-        List<Skill> cloudSkills = List.of(
-                Skill.builder()
-                        .name("AWS")
-                        .build()
-                , Skill.builder()
-                        .name("EC2")
-                        .build()
-                , Skill.builder()
-                        .name("S3")
-                        .build()
-                , Skill.builder()
-                        .name("RDS")
-                        .build()
-                , Skill.builder()
-                        .name("Ansible")
-                        .build()
-                , Skill.builder()
-                        .name("Docker")
-                        .build()
-                , Skill.builder()
-                        .name("Linux")
-                        .build()
-                , Skill.builder()
-                        .name("CI/CD")
-                        .build()
-                , Skill.builder()
-                        .name("Scalable Architecture")
-                        .build()
-                , Skill.builder()
-                        .name("Distributed Systems")
-                        .build()
-                , Skill.builder()
-                        .name("Varnish")
-                        .build()
-                , Skill.builder()
-                        .name("HAProxy")
-                        .build()
-                , Skill.builder()
-                        .name("Apache")
-                        .build()
-                , Skill.builder()
-                        .name("Spring Cloud")
-                        .build()
-                , Skill.builder()
-                        .name("AmazonMQ")
-                        .build()
-        );
+        List<Skill> cloudSkills = Skill.from(
+                "AWS"
+                , "EC2"
+                , "S3"
+                , "RDS"
+                , "Ansible"
+                , "Docker"
+                , "Linux"
+                , "CI/CD"
+                , "Scalable Architecture"
+                , "Distributed Systems"
+                , "Varnish"
+                , "HAProxy"
+                , "Apache"
+                , "Spring Cloud"
+                , "AmazonMQ");
 
-        List<Skill> otherSkills = List.of(
-                Skill.builder()
-                        .name("Gitlab")
-                        .build()
-                , Skill.builder()
-                        .name("JIRA")
-                        .build()
-                , Skill.builder()
-                        .name("Bamboo")
-                        .build()
-                , Skill.builder()
-                        .name("Contour")
-                        .build()
-                , Skill.builder()
-                        .name("Software Development Lifecycle")
-                        .build()
-                , Skill.builder()
-                        .name("Team Management")
-                        .build()
-                , Skill.builder()
-                        .name("Agile")
-                        .build()
-                , Skill.builder()
-                        .name("Scrum")
-                        .build()
-        );
+        List<Skill> otherSkills = Skill.from(
+                "Gitlab"
+                , "JIRA"
+                , "Bamboo"
+                , "Contour"
+                , "Software Development Lifecycle"
+                , "Team Management"
+                , "Agile"
+                , "Scrum");
 
         SkillGroup programmingLanguages = SkillGroup.builder()
                 .name("Programming Languages")

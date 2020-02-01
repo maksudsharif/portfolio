@@ -30,8 +30,8 @@
             <!-- optional: default phase is "generate-resources" -->
             <phase>generate-resources</phase>
             <configuration>
-              <nodeVersion>v13.2.0</nodeVersion>
-              <yarnVersion>v1.19.1</yarnVersion>
+              <nodeVersion>v13.7.0</nodeVersion>
+              <yarnVersion>v1.21.1</yarnVersion>
 
               <!-- optional: where to download node from. Defaults to https://nodejs.org/dist/ -->
               <nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>

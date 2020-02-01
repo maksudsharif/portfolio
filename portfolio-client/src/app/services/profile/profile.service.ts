@@ -1,33 +1,39 @@
 import {HttpClient} from '@angular/common/http';
-import {CacheService} from '../cache/cache.service';
 import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {ProfileHeaderInfo} from "../../components/model/profileHeaderInfo";
-import {ProfileInfo} from "../../components/model/profileInfo";
+import {ProfileHeaderInfo} from '../../components/model/profileHeaderInfo';
+import {ProfileInfo} from '../../components/model/profileInfo';
+import {shareReplay} from 'rxjs/operators';
 
 const PROFILE_URL = 'api/profile';
 const PROFILE_HEADER_URL = 'api/profile/header';
 
 @Injectable()
 export class ProfileService {
+  headerInfo: Observable<any>;
+  profileInfo: Observable<any>;
 
-  constructor(private http: HttpClient, private cacheService: CacheService) {
+  constructor(private http: HttpClient) {
   }
 
   public getProfileInfo(): Observable<any> | Subject<any> {
-    return this.cacheService.get('ProfileInfo', this._getProfileInfoInternal());
+    return this.profileInfo ? this.profileInfo : this._getProfileInfoInternal();
   }
 
   public getProfileHeaderInfo(): Observable<any> | Subject<any> {
-    return this.cacheService.get('ProfileHeaderInfo', this._getProfileHeaderInfoInternal());
+    return this.headerInfo ? this.headerInfo : this._getProfileHeaderInfoInternal();
   }
 
-  private _getProfileInfoInternal(): Observable<ProfileInfo> | Subject<ProfileInfo> {
-    return this.http.get<ProfileInfo>(`${PROFILE_URL}`);
+  private _getProfileInfoInternal(): Observable<any> | Subject<any> {
+    const profileRequest = this.http.get<ProfileInfo>(PROFILE_URL).pipe(shareReplay());
+    this.profileInfo = profileRequest;
+    return profileRequest;
   }
 
-  private _getProfileHeaderInfoInternal(): Observable<ProfileHeaderInfo> | Subject<ProfileHeaderInfo> {
-    return this.http.get<ProfileHeaderInfo>(`${PROFILE_HEADER_URL}`);
+  private _getProfileHeaderInfoInternal(): Observable<any> | Subject<any> {
+    const headerRequest = this.http.get<ProfileHeaderInfo>(PROFILE_HEADER_URL).pipe(shareReplay());
+    this.headerInfo = headerRequest;
+    return headerRequest;
   }
 
 }

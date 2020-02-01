@@ -13,7 +13,6 @@ import {LanguagesComponent} from './components/languages/languages.component';
 import {InterestsComponent} from './components/interests/interests.component';
 import {SkillItemComponent} from './components/skill-item/skill-item.component';
 import {ProfileService} from './services/profile/profile.service';
-import {CacheService} from './services/cache/cache.service';
 import {ClearanceComponent} from './components/clearance/clearance.component';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
@@ -40,8 +39,7 @@ import {BrowserModule} from '@angular/platform-browser';
     HttpClientModule
   ],
   providers: [
-    ProfileService,
-    CacheService
+    ProfileService
   ],
   bootstrap: [AppComponent]
 })
