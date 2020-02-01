@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
-  "version": "1.1.2",
+  "description": "Portfolio for Maksud Sharif",
+  "version": "1.1.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
