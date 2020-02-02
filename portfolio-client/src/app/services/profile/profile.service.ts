@@ -5,7 +5,7 @@ import {ProfileHeaderInfo} from '../../components/model/profileHeaderInfo';
 import {ProfileInfo} from '../../components/model/profileInfo';
 import {shareReplay} from 'rxjs/operators';
 
-const PROFILE_URL = 'api/profile';
+const PROFILE_URL = 'api/profile/info';
 const PROFILE_HEADER_URL = 'api/profile/header';
 
 @Injectable()

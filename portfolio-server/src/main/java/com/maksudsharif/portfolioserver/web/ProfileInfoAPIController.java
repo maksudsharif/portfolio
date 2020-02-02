@@ -2,6 +2,7 @@ package com.maksudsharif.portfolioserver.web;
 
 import com.maksudsharif.portfolioserver.model.Profile;
 import com.maksudsharif.portfolioserver.model.ProfileHeader;
+import com.maksudsharif.portfolioserver.model.ProfileInfo;
 import com.maksudsharif.portfolioserver.service.ProfileInfoService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,13 @@ public class ProfileInfoAPIController
     public Mono<Profile> getProfile()
     {
         return Mono.just(profileInfoService.getProfile());
+    }
+
+    @GetMapping("/profile/info")
+    @ResponseBody
+    public Mono<ProfileInfo> getProfileInfo()
+    {
+        return Mono.just(profileInfoService.getProfileInfo());
     }
 
     @GetMapping("/profile/header")

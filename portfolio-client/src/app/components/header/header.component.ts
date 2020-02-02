@@ -1,6 +1,6 @@
 import {ProfileService} from '../../services/profile/profile.service';
 import {Component, OnInit} from '@angular/core';
-import {ProfileHeaderInfo} from "../model/profileHeaderInfo";
+import {ProfileHeaderInfo} from '../model/profileHeaderInfo';
 
 @Component({
   selector: 'app-header',
