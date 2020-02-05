@@ -1,6 +1,5 @@
 package com.maksudsharif.portfolioserver.config;
 
-import org.springframework.cache.CacheManager;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.CacheControl;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +7,6 @@ import org.springframework.web.method.HandlerTypePredicate;
 import org.springframework.web.reactive.config.PathMatchConfigurer;
 import org.springframework.web.reactive.config.ResourceHandlerRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
-import org.springframework.web.reactive.resource.CachingResourceResolver;
 import org.springframework.web.reactive.resource.EncodedResourceResolver;
 
 import java.time.Duration;
@@ -21,8 +19,7 @@ public class WebfluxConfiguration implements WebFluxConfigurer
     {
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/public/", "classpath:/static/")
-                .setCacheControl(CacheControl.maxAge(Duration.ofDays(365))
-                .cachePublic())
+                .setCacheControl(CacheControl.maxAge(Duration.ofDays(365)).cachePublic())
                 .resourceChain(true)
                 .addResolver(new EncodedResourceResolver());
 
