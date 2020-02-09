@@ -29,7 +29,11 @@
               "src/favicon-32x32.png"
             ],
             "styles": [
-              "src/styles.css"
+              "src/css/styles.css",
+              "src/css/fontawesome.min.css",
+              "src/css/brands.min.css",
+              "src/css/solid.min.css",
+              "src/css/roboto.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -87,7 +91,11 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/css/styles.css",
+              "src/css/fontawesome.min.css",
+              "src/css/brands.min.css",
+              "src/css/solid.min.css",
+              "src/css/roboto.css"
             ],
             "scripts": [],
             "assets": [
