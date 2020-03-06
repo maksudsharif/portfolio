@@ -12,25 +12,25 @@ import reactor.core.publisher.Mono;
 @Log4j2
 public class IndexWebFilter implements WebFilter
 {
-    /*
-     * Auto redirect '/' to default page
-     */
-    @Override
-    public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain)
-    {
-        try
-        {
-            if (exchange.getRequest().getURI().getPath().equals("/"))
-            {
-                return chain.filter(exchange.mutate().request(exchange.getRequest().mutate().path("/index.html").build()).build());
-            }
-        } catch (Exception e)
-        {
-            log.error("Unable to redirect '/' to default", e);
-            exchange.getResponse().setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR);
-            return chain.filter(exchange);
-        }
 
-        return chain.filter(exchange);
+  /*
+   * Auto redirect '/' to default page
+   */
+  @Override
+  public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain)
+  {
+    try {
+      if (exchange.getRequest().getURI().getPath().equals("/")) {
+        return chain.filter(
+            exchange.mutate().request(exchange.getRequest().mutate().path("/index.html").build())
+                .build());
+      }
+    } catch (Exception e) {
+      log.error("Unable to redirect '/' to default", e);
+      exchange.getResponse().setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR);
+      return chain.filter(exchange);
     }
+
+    return chain.filter(exchange);
+  }
 }
