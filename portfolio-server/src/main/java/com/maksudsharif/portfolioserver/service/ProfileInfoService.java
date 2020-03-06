@@ -6,11 +6,12 @@ import com.maksudsharif.portfolioserver.model.ProfileInfo;
 
 public interface ProfileInfoService
 {
-    String getName();
 
-    Profile getProfile();
+  String getName();
 
-    ProfileInfo getProfileInfo();
+  Profile getProfile();
 
-    ProfileHeader getProfileHeader();
+  ProfileInfo getProfileInfo();
+
+  ProfileHeader getProfileHeader();
 }
