@@ -36,8 +36,7 @@
               "src/css/solid.min.css",
               "src/css/roboto.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
