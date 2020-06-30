@@ -10,6 +10,7 @@ export class ClearanceComponent implements OnInit {
   private profileService: ProfileService;
   clearance: string;
   clearanceStatus: string;
+  clearanceDate: string;
 
   constructor(profileService: ProfileService) {
     this.profileService = profileService;
@@ -19,6 +20,7 @@ export class ClearanceComponent implements OnInit {
     this.profileService.getProfileInfo().subscribe(value => {
       this.clearance = value.clearance;
       this.clearanceStatus = value.clearanceStatus;
+      this.clearanceDate = value.clearanceDate
     });
   }
 

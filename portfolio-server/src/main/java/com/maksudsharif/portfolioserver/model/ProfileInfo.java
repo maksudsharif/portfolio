@@ -7,21 +7,21 @@ import lombok.Data;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ProfileInfo implements Serializable
-{
+public class ProfileInfo implements Serializable {
 
   private String clearance;
   private String clearanceStatus;
+  private String clearanceDate;
   private String summary;
   private List<Education> education;
   private List<String> interests;
   private List<Language> languages;
   private List<SkillGroup> skills;
 
-  public ProfileInfo(Profile profile)
-  {
+  public ProfileInfo(Profile profile) {
     this.clearance = profile.getClearance();
     this.clearanceStatus = profile.getClearanceStatus();
+    this.clearanceDate = profile.getClearanceDate();
     this.summary = profile.getSummary();
     this.education = profile.getEducation();
     this.interests = profile.getInterests();

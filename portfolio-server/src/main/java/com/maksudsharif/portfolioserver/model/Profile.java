@@ -7,8 +7,7 @@ import lombok.Data;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Profile implements Serializable
-{
+public class Profile implements Serializable {
 
   private String name;
   private String title;
@@ -21,6 +20,7 @@ public class Profile implements Serializable
   private String personalSiteTitle;
   private String clearance;
   private String clearanceStatus;
+  private String clearanceDate;
   private String summary;
   private List<Education> education;
   private List<String> interests;
