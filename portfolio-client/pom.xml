@@ -19,7 +19,7 @@
       <plugin>
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
-        <version>1.8.0</version>
+        <version>1.10.0</version>
         <executions>
           <execution>
             <!-- optional: you don't really need execution ids, but it looks nice in your build log. -->
@@ -30,8 +30,8 @@
             <!-- optional: default phase is "generate-resources" -->
             <phase>generate-resources</phase>
             <configuration>
-              <nodeVersion>v13.10.1</nodeVersion>
-              <yarnVersion>v1.22.0</yarnVersion>
+              <nodeVersion>v13.14.0</nodeVersion>
+              <yarnVersion>v1.22.4</yarnVersion>
 
               <!-- optional: where to download node from. Defaults to https://nodejs.org/dist/ -->
               <nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>
