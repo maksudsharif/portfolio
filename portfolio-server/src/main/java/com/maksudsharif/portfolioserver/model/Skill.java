@@ -17,8 +17,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class Skill implements Serializable
-{
+public class Skill implements Serializable {
 
   private String name;
   private String years;
@@ -26,13 +25,11 @@ public class Skill implements Serializable
   @JsonInclude(JsonInclude.Include.NON_NULL)
   private String level;
 
-  public Skill(String name)
-  {
+  public Skill(String name) {
     this.name = name;
   }
 
-  public static List<Skill> from(String... skills)
-  {
+  public static List<Skill> from(String... skills) {
     return skills != null && skills.length > 0 ? Arrays.stream(skills).map(Skill::new)
         .collect(Collectors.toList()) : Collections.emptyList();
   }

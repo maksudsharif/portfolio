@@ -6,8 +6,7 @@ import lombok.Data;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ProfileHeader implements Serializable
-{
+public class ProfileHeader implements Serializable {
 
   private String name;
   private String title;
@@ -19,8 +18,7 @@ public class ProfileHeader implements Serializable
   private String personalSiteTitle;
   private boolean showProfileImage;
 
-  public ProfileHeader(Profile profile)
-  {
+  public ProfileHeader(Profile profile) {
     this.name = profile.getName();
     this.title = profile.getTitle();
     this.email = profile.getEmail();

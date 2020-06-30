@@ -10,15 +10,13 @@ import reactor.core.publisher.Mono;
 
 @Component
 @Log4j2
-public class IndexWebFilter implements WebFilter
-{
+public class IndexWebFilter implements WebFilter {
 
   /*
    * Auto redirect '/' to default page
    */
   @Override
-  public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain)
-  {
+  public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
     try {
       if (exchange.getRequest().getURI().getPath().equals("/")) {
         return chain.filter(

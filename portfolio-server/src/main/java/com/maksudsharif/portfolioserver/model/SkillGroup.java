@@ -7,8 +7,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class SkillGroup implements Serializable
-{
+public class SkillGroup implements Serializable {
 
   private String name;
   private List<Skill> skills;

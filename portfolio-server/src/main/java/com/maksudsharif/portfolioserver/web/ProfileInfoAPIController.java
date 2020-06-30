@@ -15,15 +15,13 @@ import reactor.core.publisher.Mono;
 
 @AllArgsConstructor
 @RestController
-public class ProfileInfoAPIController
-{
+public class ProfileInfoAPIController {
 
-  private ProfileInfoService profileInfoService;
+  private final ProfileInfoService profileInfoService;
 
   @GetMapping("/profile")
   @ResponseBody
-  public ResponseEntity<Mono<Profile>> getProfile()
-  {
+  public ResponseEntity<Mono<Profile>> getProfile() {
     return ResponseEntity.ok()
         .cacheControl(CacheControl.maxAge(5, TimeUnit.MINUTES))
         .body(Mono.just(profileInfoService.getProfile()));
@@ -31,8 +29,7 @@ public class ProfileInfoAPIController
 
   @GetMapping("/profile/info")
   @ResponseBody
-  public ResponseEntity<Mono<ProfileInfo>> getProfileInfo()
-  {
+  public ResponseEntity<Mono<ProfileInfo>> getProfileInfo() {
     return ResponseEntity.ok()
         .cacheControl(CacheControl.maxAge(5, TimeUnit.MINUTES))
         .body(Mono.just(profileInfoService.getProfileInfo()));
@@ -40,8 +37,7 @@ public class ProfileInfoAPIController
 
   @GetMapping("/profile/header")
   @ResponseBody
-  public ResponseEntity<Mono<ProfileHeader>> getProfileHeader()
-  {
+  public ResponseEntity<Mono<ProfileHeader>> getProfileHeader() {
     return ResponseEntity.ok()
         .cacheControl(CacheControl.maxAge(5, TimeUnit.MINUTES))
         .body(Mono.just(profileInfoService.getProfileHeader()));

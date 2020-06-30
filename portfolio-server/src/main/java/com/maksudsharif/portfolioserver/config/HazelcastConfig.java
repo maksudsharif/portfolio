@@ -16,8 +16,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.util.Assert;
 
 @Configuration
-public class HazelcastConfig
-{
+public class HazelcastConfig {
 
   private static final String AWS_ACCESS_KEY = "access-key";
   private static final String AWS_SECRET_KEY = "secret-key";
@@ -101,8 +100,7 @@ public class HazelcastConfig
   private boolean socketBindAny;
 
   @Bean
-  public Config hazelcastConfiguration()
-  {
+  public Config hazelcastConfiguration() {
     Config config = new Config();
     GroupConfig groupConfig = new GroupConfig()
         .setName(groupName)

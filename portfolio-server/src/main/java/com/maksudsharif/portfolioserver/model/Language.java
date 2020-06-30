@@ -6,8 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class Language implements Serializable
-{
+public class Language implements Serializable {
 
   private String name;
   private String proficiency;
