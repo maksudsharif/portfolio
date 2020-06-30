@@ -12,26 +12,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class PortfolioServerApplication
-{
+public class PortfolioServerApplication {
 
   @Value("${portfolio.showProfileImage}")
   private boolean showProfileImages;
 
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     SpringApplication.run(PortfolioServerApplication.class, args);
   }
 
   @Bean
-  public Profile profileInfo()
-  {
+  public Profile profileInfo() {
     Profile profile = new Profile();
     profile.setName("Maksud Sharif");
     profile.setTitle("Software Engineer");
     profile.setEmail("maksudsharif@gmail.com");
-    profile.setClearance("Top Secret");
-    profile.setClearanceStatus("Interim");
+    profile.setClearance("TS/SCI w/ CI Polygraph");
+    profile.setClearanceStatus("Current");
+    profile.setClearanceDate("06/2020");
     profile.setLinkedIn("https://linkedin.com/in/maksudsharif");
     profile.setLinkedInTitle("linkedin.com/in/maksudsharif");
     profile.setPersonalSite("https://maksudsharif.com");
@@ -41,7 +39,7 @@ public class PortfolioServerApplication
     profile.setShowProfileImage(showProfileImages);
 
     profile.setSummary(
-        "Driven software engineer with over 8 years of technical experience and proven ability leading development and delivery of secure high-performance cloud applications. Skilled in full-stack enterprise Java development throughout the software development life-cycle including analysis, design, implementation, and testing. Also experienced with operations, maintenance, troubleshooting, monitoring, and automated deployment of applications to on-premise and cloud environments. Ask me about my homelab!");
+        "Driven software engineer with over 10 years of technical experience and proven ability leading development and delivery of secure high-performance cloud applications. Skilled in full-stack enterprise Java development throughout the software development life-cycle including analysis, design, implementation, testing, operations, maintenance, monitoring, and automated deployment of applications to on-premise and cloud environments. Ask me about my homelab!");
 
     Education education = Education.builder()
         .addendum("(Coursework Towards)")
