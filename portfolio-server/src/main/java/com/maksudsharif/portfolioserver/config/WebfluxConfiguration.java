@@ -11,12 +11,10 @@ import org.springframework.web.reactive.config.WebFluxConfigurer;
 import org.springframework.web.reactive.resource.EncodedResourceResolver;
 
 @Configuration
-public class WebfluxConfiguration implements WebFluxConfigurer
-{
+public class WebfluxConfiguration implements WebFluxConfigurer {
 
   @Override
-  public void addResourceHandlers(ResourceHandlerRegistry registry)
-  {
+  public void addResourceHandlers(ResourceHandlerRegistry registry) {
     registry.addResourceHandler("/**")
         .addResourceLocations("classpath:/public/", "classpath:/static/")
         .setCacheControl(CacheControl.maxAge(Duration.ofDays(365)).cachePublic())
@@ -26,8 +24,7 @@ public class WebfluxConfiguration implements WebFluxConfigurer
   }
 
   @Override
-  public void configurePathMatching(PathMatchConfigurer configurer)
-  {
+  public void configurePathMatching(PathMatchConfigurer configurer) {
     configurer.addPathPrefix("api", HandlerTypePredicate.forAnnotation(RestController.class));
   }
 }

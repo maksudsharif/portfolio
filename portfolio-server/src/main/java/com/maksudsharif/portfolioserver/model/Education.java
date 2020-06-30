@@ -6,8 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class Education implements Serializable
-{
+public class Education implements Serializable {
 
   private String title;
   private String addendum;
