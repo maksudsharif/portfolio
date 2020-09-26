@@ -2,14 +2,14 @@
 Source for https://maksudsharif.com
 
 ## Server
-- Java 13
+- Java 15
 - Spring Boot
 - Spring Cache
 - EhCache
 - Lombok
 
 ## Client
-- Angular 9
+- Angular 10
 - Webpack
 - Angular CLI
 
