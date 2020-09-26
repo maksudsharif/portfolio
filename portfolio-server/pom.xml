@@ -67,7 +67,7 @@
     </dependencies>
 
     <build>
-        <finalName>portfolio-${project.parent.version}</finalName>
+        <finalName>portfolio</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -122,6 +122,14 @@
                     <to>
                         <image>portfolio</image>
                     </to>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>15</source>
+                    <target>15</target>
                 </configuration>
             </plugin>
         </plugins>
