@@ -5,7 +5,7 @@ Source for https://maksudsharif.com
 - Java 13
 - Spring Boot
 - Spring Cache
-- Hazelcast
+- EhCache
 - Lombok
 
 ## Client
