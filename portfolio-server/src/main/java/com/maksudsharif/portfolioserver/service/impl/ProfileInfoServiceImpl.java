@@ -21,25 +21,21 @@ public class ProfileInfoServiceImpl implements ProfileInfoService {
   }
 
   @Override
-  @Cacheable(cacheNames = "profileInfo", key = "'profileName'", condition = "#result != null && #result.trim().length() != 0")
   public String getName() {
     return profile.getName();
   }
 
   @Override
-  @Cacheable(cacheNames = "profileInfo", key = "'profile'")
   public Profile getProfile() {
     return profile;
   }
 
   @Override
-  @Cacheable(cacheNames = "profileInfo", key = "'profileInfo'")
   public ProfileInfo getProfileInfo() {
     return profileInfo;
   }
 
   @Override
-  @Cacheable(cacheNames = "profileInfo", key = "'profileHeader'")
   public ProfileHeader getProfileHeader() {
     return profileHeader;
   }
