@@ -2,161 +2,23 @@
   <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Work Experience</h2>
   <div class="resume-section-content">
     <div class="resume-timeline position-relative">
-      <article class="resume-timeline-item position-relative pb-5">
+      <article *ngFor="let item of workItems" class="resume-timeline-item position-relative pb-5">
         <div class="resume-timeline-item-header mb-2">
           <div class="d-flex flex-column flex-md-row">
-            <h3 class="resume-position-title font-weight-bold mb-1">Software Engineer</h3>
-            <div class="resume-company-name ml-auto">The Buffalo Group, LLC.</div>
+            <h3 class="resume-position-title font-weight-bold mb-1">{{ item.title }}</h3>
+            <div class="resume-company-name ml-auto">{{ item.employer }}</div>
           </div>
-          <div class="resume-position-time">Oct. 2019 - Present</div>
+          <div class="resume-position-time">{{ item.start }} - {{ item.end }}</div>
         </div>
         <div class="resume-timeline-item-desc">
-          <p>Responsible for developing full-stack solutions for a
-            variety of web based applications including business
-            systems, mission systems, and support systems.</p>
-          <p>Work as part of multiple teams developing applications
-            for both classified and unclassified environments. Help
-            set the direction, implementation, and capabilities of
-            the solutions to meet restrictions.</p>
+          <div [innerHTML]="item.description | safeHtml "></div>
           <h4 class="resume-timeline-item-desc-heading font-weight-bold">Accomplishments:</h4>
-          <ul>
-            <li>Design and develop geo-spatial, workflow, and
-              authentication/authorization and other business
-              critical features for reporting and mapping
-              application.</li>
-            <li>Develop and refine Python data ingestion pipeline
-              from legacy SOAP systems to modern search
-              application with Kafka.</li>
-          </ul>
+          <div [innerHTML]="item.accomplishments | safeHtml"></div>
           <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
           <ul class="list-inline">
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Java</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Spring Boot</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Angular</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">React</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">CI/CD</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Linux</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">AWS</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Jenkins</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Docker</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">OpenShift</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">PostGIS</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">SOAP/WSDL</span></li>
-          </ul>
-        </div>
-      </article>
-      <article class="resume-timeline-item position-relative pb-5">
-        <div class="resume-timeline-item-header mb-2">
-          <div class="d-flex flex-column flex-md-row">
-            <h3 class="resume-position-title font-weight-bold mb-1">Lead Software Engineer</h3>
-            <div class="resume-company-name ml-auto">Armedia LLC.</div>
-          </div>
-          <div class="resume-position-time">Sept. 2018 - Oct. 2019</div>
-        </div>
-        <div class="resume-timeline-item-desc">
-          <p>As architect and tech lead, provide guidance and
-            mentorship for development teams in addition to the
-            design, implementation, testing, and deployment of
-            multiple new features for production applications.</p>
-          <h4 class="resume-timeline-item-desc-heading font-weight-bold">Accomplishments:</h4>
-          <ul>
-            <li>Deliver multiple product releases to production
-              environments in AWS to global user-base improving
-              average API response times by 2-3x and improve
-              security based off third-party audits.
+            <li *ngFor="let si of item.skillsUsed" class="list-inline-item">
+              <span class="badge badge-primary badge-pill">{{ si.name }}</span>
             </li>
-            <li>Propose and re-architect search subsystem of
-              production application with Solr Cloud to improve
-              query response times by 2-10x.</li>
-          </ul>
-          <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-          <ul class="list-inline">
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Java</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Spring</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Spring Boot</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Angular</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">AngularJS</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Linux</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">AWS</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Solr</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Solr Cloud</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">SolrJ</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="resume-timeline-item position-relative pb-5">
-        <div class="resume-timeline-item-header mb-2">
-          <div class="d-flex flex-column flex-md-row">
-            <h3 class="resume-position-title font-weight-bold mb-1">Software Engineer</h3>
-            <div class="resume-company-name ml-auto">Armedia LLC.</div>
-          </div>
-          <div class="resume-position-time">Feb. 2016 - Sept. 2018</div>
-        </div>
-        <div class="resume-timeline-item-desc">
-          <p>Design, implement, test, and deploy application for global health
-            organization with global user-base. Took
-            ownership of business critical features with high
-            visibility from end-users. Including, but not limited to:</p>
-          <ul>
-            <li>On-demand OCR: Remove manual parsing and copying of multi-page PDF documents.</li>
-            <li>Real-time Auditing: Track all changes to user-data for analytics and compliance.</li>
-            <li>Automated validation of external data sources to streamline data ingestion and reduce user error by 20%.</li>
-          </ul>
-          <h4 class="resume-timeline-item-desc-heading font-weight-bold">Accomplishments:</h4>
-          <ul>
-            <li>Deploy enterprise Java/Spring/AngularJS
-              application with real-time auditing, alerts, multifactor authentication, and analysis of usergenerated field reports to production in AWS for
-              global health organizations.
-            </li>
-            <li>Use CI/CD pipelines for
-              both Java and AngularJS application to reduce time
-              to production from days to minutes.
-            </li>
-            <li>Implement and execute end-to-end data migration
-              from legacy system reducing time to production by
-              months.
-            </li>
-          </ul>
-          <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-          <ul class="list-inline">
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Java</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Spring</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Spring Boot</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">AngularJS</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Linux</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">AWS</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">CI/CD</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Multifactor Authentication</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Security</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Agile/Scrum</span></li>
-          </ul>
-        </div>
-      </article>
-      <article class="resume-timeline-item position-relative pb-5">
-        <div class="resume-timeline-item-header mb-2">
-          <div class="d-flex flex-column flex-md-row">
-            <h3 class="resume-position-title font-weight-bold mb-1">Junior Software Engineer</h3>
-            <div class="resume-company-name ml-auto">Armedia LLC.</div>
-          </div>
-          <div class="resume-position-time">Sept. 2015 - Feb. 2016</div>
-        </div>
-        <div class="resume-timeline-item-desc">
-          <p>Analyze and implement new features from product
-            roadmap for enterprise Java application with Spring and
-            AngularJS.</p>
-          <h4 class="resume-timeline-item-desc-heading font-weight-bold">Accomplishments:</h4>
-          <ul>
-            <li>Add user preferences module to product to allow quick customization of user dashboards in AngularJS application.</li>
-            <li>Improve unit and integration test coverage of Java backend services by 5%.</li>
-          </ul>
-          <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-          <ul class="list-inline">
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Java</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Spring</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">AngularJS</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Alfresco</span></li>
-            <li class="list-inline-item"><span class="badge badge-primary badge-pill">JUnit</span></li>
           </ul>
         </div>
       </article>

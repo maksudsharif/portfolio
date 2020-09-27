@@ -1,7 +1,7 @@
 import {Skill} from "./skill";
+import {SkillItemType} from "./skillItemType";
 
-export class WorkItem
-{
+export class WorkItem {
   title: string;
   employer: string;
   start: string;
@@ -19,5 +19,16 @@ export class WorkItem
     this.description = description;
     this.skillsUsed = skillsUsed;
     this.accomplishments = accomplishments;
+  }
+
+  static from(workItem: any) {
+    const item = new WorkItem(workItem.title
+      , workItem.employer
+      , workItem.start
+      , workItem.end
+      , workItem.description
+      , workItem.skillsUsed
+      , workItem.accomplishments);
+    return item;
   }
 }
