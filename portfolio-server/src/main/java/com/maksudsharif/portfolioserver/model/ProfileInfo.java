@@ -17,6 +17,7 @@ public class ProfileInfo implements Serializable {
   private List<String> interests;
   private List<Language> languages;
   private List<SkillGroup> skills;
+  private List<WorkItem> workItems;
 
   public ProfileInfo(Profile profile) {
     this.clearance = profile.getClearance();
@@ -27,5 +28,6 @@ public class ProfileInfo implements Serializable {
     this.interests = profile.getInterests();
     this.languages = profile.getLanguages();
     this.skills = profile.getSkills();
+    this.workItems = profile.getWorkItems();
   }
 }

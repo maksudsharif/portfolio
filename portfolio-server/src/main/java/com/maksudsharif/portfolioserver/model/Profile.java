@@ -26,5 +26,6 @@ public class Profile implements Serializable {
   private List<String> interests;
   private List<Language> languages;
   private List<SkillGroup> skills;
+  private List<WorkItem> workItems;
   private boolean showProfileImage;
 }
