@@ -16,6 +16,7 @@ import {ProfileService} from './services/profile/profile.service';
 import {ClearanceComponent} from './components/clearance/clearance.component';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {Safe} from "./pipes/safe.pipe";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {BrowserModule} from '@angular/platform-browser';
     LanguagesComponent,
     InterestsComponent,
     SkillItemComponent,
-    ClearanceComponent
+    ClearanceComponent,
+    Safe
   ],
   imports: [
     BrowserModule,
