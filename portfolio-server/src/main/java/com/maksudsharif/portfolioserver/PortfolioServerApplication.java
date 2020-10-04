@@ -29,7 +29,7 @@ public class PortfolioServerApplication {
     profile.setTitle("Software Engineer");
     profile.setEmail("maksudsharif@gmail.com");
     profile.setClearance("TS/SCI w/ CI Polygraph");
-    profile.setClearanceStatus("Current");
+    profile.setClearanceStatus("Active");
     profile.setClearanceDate("09/2020");
     profile.setLinkedIn("https://linkedin.com/in/maksudsharif");
     profile.setLinkedInTitle("linkedin.com/in/maksudsharif");
@@ -64,23 +64,18 @@ public class PortfolioServerApplication {
         , "SOAP/WSDL");
     WorkItem tbg = WorkItem.builder()
         .description("""
-            <p>Responsible for developing full-stack solutions for a
-              variety of web based applications including business
-              systems, mission systems, and support systems.</p>
-            <p>Work as part of multiple teams developing applications
-              for both classified and unclassified environments. Help
-              set the direction, implementation, and capabilities of
-              the solutions to meet restrictions.</p>
+            <p>Take lead of the direction, capabilities, and implementation 
+                of web-based solutions in classified and unclassified environments.</p>
             """)
         .accomplishments("""
             <ul>
-              <li>Design and develop geo-spatial, workflow, and
-                authentication/authorization and other business
-                critical features for reporting and mapping
-                application.</li>
-              <li>Develop and refine Python data ingestion pipeline
-                from legacy SOAP systems to modern search
-                application with Kafka.</li>
+              <li>Spear-headed development of mission-critical 
+                (mapping, workflow, authentication/authorization) 
+                features/capabilities for Spring Boot application and 
+                delivered 2 months ahead of schedule.</li>
+              <li>Modernized data ingestion pipeline from legacy SOAP 
+                systems to modern search application with Python, Kafka, 
+                and Elasticsearch.</li>
             </ul>
             """)
         .employer("The Buffalo Group, LLC")
@@ -102,18 +97,16 @@ public class PortfolioServerApplication {
         , "SolrJ");
     WorkItem armLead = WorkItem.builder()
         .description("""
-            <p>As architect and tech lead, provide guidance and
-              mentorship for development teams in addition to the
-              design, implementation, testing, and deployment of
-              multiple new features for production applications.</p>
+            <p>As architect and tech lead for high visibility project,
+              lead the design, implementation, testing, and deployment
+              of new features for production applications.</p>
             """)
         .accomplishments("""
             <ul>
-              <li>Deliver multiple product releases to production
-                environments in AWS to global user-base improving
-                average API response times by 2-3x and improve
-                security based off third-party audits.
-              </li>
+              <li>Delivered 5 product releases to production 
+                environments in AWS to global user-base improving 
+                average API response times by 2-3x and improving 
+                security controls as verified by third-party audits.</li>
               <li>Propose and re-architect search subsystem of
                 production application with Solr Cloud to improve
                 query response times by 2-10x.</li>
@@ -138,10 +131,9 @@ public class PortfolioServerApplication {
         , "Agile/Scrum");
     WorkItem arm = WorkItem.builder()
         .description("""
-            <p>Design, implement, test, and deploy application for global health
-              organization with global user-base. Took
-              ownership of business critical features with high
-              visibility from end-users. Including, but not limited to:</p>
+            <p>Took ownership of high-visibility, high-impact end-user
+              features and deployed to production an application
+              for global health organization with global user-base. Features included:</p>
             <ul>
               <li>On-demand OCR: Remove manual parsing and copying of multi-page PDF documents.</li>
               <li>Real-time Auditing: Track all changes to user-data for analytics and compliance.</li>
@@ -150,15 +142,15 @@ public class PortfolioServerApplication {
             """)
         .accomplishments("""
             <ul>
-              <li>Deploy enterprise Java/Spring/AngularJS
-                application with real-time auditing, alerts, multi-factor authentication, and analysis of usergenerated field reports to production in AWS for
-                global health organizations.
+              <li>Deployed to production in AWS an enterprise Java/Spring/AngularJS application
+                with real-time auditing, alerts, multi-factor authentication, and automated
+                analysis of user-generated field reports for global health organizations.
               </li>
               <li>Use CI/CD pipelines for
                 both Java and AngularJS application to reduce time
-                to production from days to minutes.
+                to production from days to minutes with Bamboo.
               </li>
-              <li>Implement and execute end-to-end data migration
+              <li>Build and execute end-to-end data migration
                 from legacy system reducing time to production by
                 months.
               </li>
@@ -183,11 +175,11 @@ public class PortfolioServerApplication {
               AngularJS.</p>
             """)
         .accomplishments("""
-            <ul>
-             <li>Add user preferences module to product to allow quick customization of user dashboards in AngularJS application.</li>
-             <li>Improve unit and integration test coverage of Java backend services by 5%.</li>
-           </ul>
-            """)
+             <ul>
+              <li>Add user preferences module to product to allow quick customization of user dashboards in AngularJS application.</li>
+              <li>Improve unit and integration test coverage of Java backend services by 5%.</li>
+            </ul>
+             """)
         .employer("Armedia LLC.")
         .title("Junior Software Engineer")
         .start("Sept. 2015")
@@ -201,34 +193,37 @@ public class PortfolioServerApplication {
 
     List<Skill> techSkills = Skill.from(
         "Spring"
+        , "Spring Security"
         , "Spring Boot"
-        , "SQL"
-        , "ORM"
-        , "Solr"
-        , "ActiveMQ"
-        , "Hazelcast"
-        , "Alfresco"
-        , "PostgreSQL"
-        , "Apache Tomcat"
-        , "AngularJS"
-        , "Typescript"
+        , "Spring Integration"
         , "Angular"
+        , "AngularJS"
         , "Angular Material"
         , "React"
+        , "PostgreSQL"
+        , "PostGIS"
+        , "MySQL"
+        , "MongoDB"
+        , "Hibernate"
+        , "Solr"
+        , "Elasticsearch"
+        , "ActiveMQ"
+        , "Kafka"
+        , "Hazelcast"
+        , "Alfresco"
+        , "Apache Tomcat"
+        , "Wildfly"
         , "Git"
         , "REST API"
-        , "Maven"
+        , "Maven/Gradle"
         , "NPM"
+        , "Yarn"
         , "JMeter"
         , "Karma/Jasmine/Protractor"
         , "JUnit"
-        , "HTML/CSS"
         , "Apache Geode"
-        , "Spring Security"
-        , "Spring Security"
-        , "Spring Integration"
         , "Apache Camel"
-        , "PostGIS");
+        , "SOAP");
 
     List<Skill> programmingSkills = List.of(
         Skill.builder()
@@ -237,7 +232,17 @@ public class PortfolioServerApplication {
             .years("10")
             .build()
         , Skill.builder()
-            .name("Javascript")
+            .name("Javascript/Typescript")
+            .level("60")
+            .years("6")
+            .build()
+        , Skill.builder()
+            .name("SQL")
+            .level("40")
+            .years("6")
+            .build()
+        , Skill.builder()
+            .name("HTML/CSS")
             .level("60")
             .years("6")
             .build()
@@ -246,6 +251,11 @@ public class PortfolioServerApplication {
             .level("50")
             .years("5")
             .build()
+        , Skill.builder()
+            .name("Python")
+            .level("55")
+            .years("3")
+            .build()
     );
 
     List<Skill> cloudSkills = Skill.from(
@@ -253,9 +263,9 @@ public class PortfolioServerApplication {
         , "EC2"
         , "S3"
         , "RDS"
+        , "AmazonMQ"
         , "Ansible"
         , "Docker"
-        , "OpenShift"
         , "Linux"
         , "CI/CD"
         , "Scalable Architecture"
@@ -264,15 +274,19 @@ public class PortfolioServerApplication {
         , "HAProxy"
         , "Apache"
         , "Spring Cloud"
-        , "AmazonMQ");
+        , "OpenShift"
+        , "Kubernetes");
 
     List<Skill> otherSkills = Skill.from(
         "Gitlab"
+        , "Bitbucket"
         , "JIRA"
         , "Bamboo"
+        , "Jenkins"
+        , "SonarQube"
+        , "Artifactory"
         , "Contour"
         , "Software Development Lifecycle"
-        , "Team Management"
         , "Agile"
         , "Scrum");
 
