@@ -1,6 +1,7 @@
 package com.maksudsharif.portfolioserver;
 
 import com.maksudsharif.portfolioserver.model.Education;
+import com.maksudsharif.portfolioserver.model.OtherPosition;
 import com.maksudsharif.portfolioserver.model.Profile;
 import com.maksudsharif.portfolioserver.model.Skill;
 import com.maksudsharif.portfolioserver.model.SkillGroup;
@@ -58,31 +59,53 @@ public class PortfolioServerApplication {
         , "Linux"
         , "AWS"
         , "Jenkins"
+        , "SonarQube"
+        , "Python"
+        , "Kafka"
+        , "Wildfly"
         , "Docker"
         , "OpenShift"
         , "PostGIS"
-        , "SOAP/WSDL");
+        , "SOAP/WSDL"
+        , "ElasticSearch"
+        , "Redis"
+        , "Activiti"
+        , "Alfresco"
+    );
+    List<OtherPosition> tbgOtherPositions = List.of(
+        OtherPosition.from("Software Engineer", "Oct. 2019", "Sept. 2020")
+    );
     WorkItem tbg = WorkItem.builder()
         .description("""
-            <p>Take lead of the direction, capabilities, and implementation 
-                of web-based solutions in classified and unclassified environments.</p>
+            <p>Take lead of the direction, capabilities, and implementation
+            of multiple web-based solutions in classified and unclassified
+            environments. Coordinate with customers (internal and external),
+            write code, resolve technical issues, mentor juniors, provide
+            tasking for technical and non-technical team members, and manage
+            DevOps lifecycle for multiple applications.</p>
             """)
         .accomplishments("""
             <ul>
-              <li>Spear-headed development of mission-critical 
-                (mapping, workflow, authentication/authorization) 
-                features/capabilities for Spring Boot application and 
-                delivered 2 months ahead of schedule.</li>
-              <li>Modernized data ingestion pipeline from legacy SOAP 
-                systems to modern search application with Python, Kafka, 
-                and Elasticsearch.</li>
+              <li>Spear-headed development of mission-critical
+              (mapping, workflow, authentication/authorization)
+              features/capabilities for Spring Boot application
+              and completed 2 months ahead of schedule.</li>
+              <li>Modernized data ingestion pipeline from legacy SOAP
+              systems to modern search application with Python, Kafka,
+              and Elasticsearch.</li>
+              <li>Take ownership of hastily constructed proof of concept
+              Java application and transformed in 6 months to a secure,
+              scalable, and modern application that is deployed to production
+              with multiple subsequent releases.</li>
             </ul>
             """)
-        .employer("The Buffalo Group, LLC")
-        .title("Software Engineer")
+        .employer("Jacobs Engineering Group")
+        .formerly("The Buffalo Group, LLC")
+        .title("Lead Software Engineer")
         .start("Oct. 2019")
         .end("Present")
         .skillsUsed(tbgSkills)
+        .otherPositions(tbgOtherPositions)
         .build();
 
     List<Skill> armLeadSkills = Skill.from("Java"
@@ -90,104 +113,55 @@ public class PortfolioServerApplication {
         , "Spring Boot"
         , "Angular"
         , "AngularJS"
+        , "CI/CD"
         , "Linux"
         , "AWS"
         , "Solr"
         , "Solr Cloud"
-        , "SolrJ");
+        , "SolrJ"
+        , "MFA"
+        , "Security"
+        , "Agile/Scrum"
+    );
+    List<OtherPosition> armOtherPositions = List.of(
+        OtherPosition.from("Software Engineer", "Feb. 2016", "Sept. 2018"),
+        OtherPosition.from("Junior Software Engineer", "Sept. 2015", "Feb. 2016")
+    );
     WorkItem armLead = WorkItem.builder()
         .description("""
-            <p>As architect and tech lead for high visibility project,
-              lead the design, implementation, testing, and deployment
-              of new features for production applications.</p>
+            <p>As architect and tech lead for high-visibility project, direct the
+               design, implementation, testing, and deployment for multiple
+               production applications. Took ownership of delivery for high-visibility,
+               high-impact end-user features for global health
+               organization with global user-base. Analyze and implement new
+               features from product road-map in Agile team for enterprise
+               product with Spring and AngularJS.</p>
             """)
         .accomplishments("""
             <ul>
-              <li>Delivered 5 product releases to production 
-                environments in AWS to global user-base improving 
-                average API response times by 2-3x and improving 
-                security controls as verified by third-party audits.</li>
-              <li>Propose and re-architect search subsystem of
-                production application with Solr Cloud to improve
-                query response times by 2-10x.</li>
+              <li>Delivered 5 product releases to production environments
+               in AWS to global user-base improving average API response times
+                by 2-3x and enhancing security controls as verified by third-party audits.</li>
+              <li>Propose and re-architect search subsystem of production
+               application with Solr Cloud to cut down query response times by 2-10x.</li>
+              <li>Deployed to production in AWS a greenfield enterprise Java/Spring/AngularJS
+               application with real-time auditing, alerts, multi-factor authentication, and
+                automated analysis of user-generated field reports for global health organizations.</li>
+              <li>Use CI/CD pipelines for both Java and AngularJS application to shrink time
+               to production from days to minutes with Bamboo.</li>
+              <li>Build and execute end-to-end data migration from legacy system reducing time
+               to production by months with Spring Boot.</li>
             </ul>
             """)
         .employer("Armedia LLC.")
         .title("Lead Software Engineer")
-        .start("Sept. 2018")
+        .start("Sept. 2015")
         .end("Oct. 2019")
         .skillsUsed(armLeadSkills)
+        .otherPositions(armOtherPositions)
         .build();
 
-    List<Skill> armSkills = Skill.from("Java"
-        , "Spring"
-        , "Spring Boot"
-        , "AngularJS"
-        , "Linux"
-        , "AWS"
-        , "CI/CD"
-        , "Multifactor Authentication"
-        , "Security"
-        , "Agile/Scrum");
-    WorkItem arm = WorkItem.builder()
-        .description("""
-            <p>Took ownership of high-visibility, high-impact end-user
-              features and deployed to production an application
-              for global health organization with global user-base. Features included:</p>
-            <ul>
-              <li>On-demand OCR: Remove manual parsing and copying of multi-page PDF documents.</li>
-              <li>Real-time Auditing: Track all changes to user-data for analytics and compliance.</li>
-              <li>Automated validation of external data sources to streamline data ingestion and reduce user error by 20%.</li>
-            </ul>
-            """)
-        .accomplishments("""
-            <ul>
-              <li>Deployed to production in AWS an enterprise Java/Spring/AngularJS application
-                with real-time auditing, alerts, multi-factor authentication, and automated
-                analysis of user-generated field reports for global health organizations.
-              </li>
-              <li>Use CI/CD pipelines for
-                both Java and AngularJS application to reduce time
-                to production from days to minutes with Bamboo.
-              </li>
-              <li>Build and execute end-to-end data migration
-                from legacy system reducing time to production by
-                months.
-              </li>
-            </ul>
-            """)
-        .employer("Armedia LLC.")
-        .title("Software Engineer")
-        .start("Feb. 2016")
-        .end("Sept. 2018")
-        .skillsUsed(armSkills)
-        .build();
-
-    List<Skill> armJuniorSkills = Skill.from("Java"
-        , "Spring"
-        , "AngularJS"
-        , "Alfresco"
-        , "JUnit");
-    WorkItem armJunior = WorkItem.builder()
-        .description("""
-            <p>Analyze and implement new features from product
-              roadmap for enterprise Java application with Spring and
-              AngularJS.</p>
-            """)
-        .accomplishments("""
-             <ul>
-              <li>Add user preferences module to product to allow quick customization of user dashboards in AngularJS application.</li>
-              <li>Improve unit and integration test coverage of Java backend services by 5%.</li>
-            </ul>
-             """)
-        .employer("Armedia LLC.")
-        .title("Junior Software Engineer")
-        .start("Sept. 2015")
-        .end("Feb. 2016")
-        .skillsUsed(armJuniorSkills)
-        .build();
-
-    profile.setWorkItems(List.of(tbg, armLead, arm, armJunior));
+    profile.setWorkItems(List.of(tbg, armLead));
 
     profile.setInterests(List.of("Homelab", "Foodie", "Travel"));
 
