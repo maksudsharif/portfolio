@@ -1,5 +1,6 @@
 package com.maksudsharif.portfolioserver.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;
@@ -9,9 +10,13 @@ import lombok.Data;
 public class WorkItem {
   private String title;
   private String employer;
+  private String formerly;
   private String start;
   private String end;
   private String description;
-  private List<Skill> skillsUsed;
+  @Builder.Default
+  private List<Skill> skillsUsed = new ArrayList<>();
   private String accomplishments;
+  @Builder.Default
+  private List<OtherPosition> otherPositions = new ArrayList<>();
 }

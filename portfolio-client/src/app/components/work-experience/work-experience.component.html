@@ -6,11 +6,20 @@
         <div class="resume-timeline-item-header mb-2">
           <div class="d-flex flex-column flex-md-row">
             <h3 class="resume-position-title font-weight-bold mb-1">{{ item.title }}</h3>
-            <div class="resume-company-name ml-auto">{{ item.employer }}</div>
+            <div class="resume-company-name ml-auto">
+              <div class="resume-company-name ml-auto">{{ item.employer }}</div>
+              <div *ngIf="item.formerly" class="ml-auto font-weight-light">formerly {{ item.formerly }}</div>
+            </div>
           </div>
           <div class="resume-position-time">{{ item.start }} - {{ item.end }}</div>
         </div>
         <div class="resume-timeline-item-desc">
+          <div *ngIf="item.otherPositions?.length > 0">
+            <h4 class="resume-company-name">Other Positions</h4>
+            <p class="resume-company-name font-weight-light">
+              <ng-container *ngFor="let op of item.otherPositions"><span>{{ op.title }} | {{ op.start }} - {{ op.end }}</span><br/></ng-container>
+            </p>
+          </div>
           <div [innerHTML]="item.description | safeHtml "></div>
           <h4 class="resume-timeline-item-desc-heading font-weight-bold">Accomplishments:</h4>
           <div [innerHTML]="item.accomplishments | safeHtml"></div>
