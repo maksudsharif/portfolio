@@ -1,6 +1,6 @@
 # Maksud Sharif — Portfolio
 
-Static personal portfolio for [maksudsharif.com](https://maksudsharif.com), built with React, TypeScript, and Vite. The site does not require an application server, database, or runtime API.
+Static personal portfolio for [maksudsharif.com](https://maksudsharif.com), built with React, TypeScript, and Vite. React is used as a build-time template layer: Vite renders the complete page to HTML, so the deployed site does not ship a hydration bundle or require an application server, database, or runtime API.
 
 ## Local development
 
@@ -29,6 +29,8 @@ npm run preview
 ```
 
 The optimized static site is written to `dist/`.
+
+The production artifact contains the rendered HTML, extracted CSS, and a small inline handler for closing the native mobile menu. It does not contain a client-side React bundle.
 
 ## Deployment
 
