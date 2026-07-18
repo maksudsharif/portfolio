@@ -1,3 +1,18 @@
-.idea
+node_modules/
+dist/
+.vite/
+coverage/
+*.log
+.DS_Store
+
+.idea/
+.vscode/
 *.iml
 .project
+
+.env
+.env.*
+!.env.example
+
+# The deployable résumé lives in public/assets.
+/*.pdf
