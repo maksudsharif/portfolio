@@ -10,6 +10,10 @@ coverage/
 *.iml
 .project
 
+# Local AI assistant configuration.
+.claude/
+.codex/
+
 .env
 .env.*
 !.env.example
