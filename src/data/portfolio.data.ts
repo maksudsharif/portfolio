@@ -39,32 +39,55 @@ export const capabilities: ReadonlyArray<{
   {
     number: '01',
     title: 'Cloud platforms',
-    description: 'Secure, scalable AWS and Kubernetes foundations designed around developer experience, cost, and production reality.',
+    description:
+      'Secure, scalable AWS and Kubernetes foundations designed around developer experience, cost, and production reality.',
     bullets: ['AWS serverless architecture', 'Kubernetes & OpenShift', 'Terraform, Helm & Ansible'],
     icon: 'cloud',
   },
   {
     number: '02',
     title: 'DevSecOps enablement',
-    description: 'Self-service delivery systems that encode security, reduce toil, and help teams ship confidently across environments.',
-    bullets: ['CI/CD & blue/green delivery', 'RBAC, IAM & secret management', 'Reusable platform tooling'],
+    description:
+      'Self-service delivery systems that encode security, reduce toil, and help teams ship confidently across environments.',
+    bullets: [
+      'CI/CD & blue/green delivery',
+      'RBAC, IAM & secret management',
+      'Reusable platform tooling',
+    ],
     icon: 'security',
     featured: true,
   },
   {
     number: '03',
     title: 'Streaming & SRE',
-    description: 'Observable distributed systems with real-time data movement, proactive alerting, and operational discipline built in.',
-    bullets: ['Kafka, NiFi, Flink & Debezium', 'Prometheus & Alertmanager', 'Runbooks & incident response'],
+    description:
+      'Observable distributed systems with real-time data movement, proactive alerting, and operational discipline built in.',
+    bullets: [
+      'Kafka, NiFi, Flink & Debezium',
+      'Prometheus & Alertmanager',
+      'Runbooks & incident response',
+    ],
     icon: 'observability',
   },
 ]
 
 export const outcomes = [
-  { value: '10–100×', description: 'throughput improvement across critical backend and client processing paths.' },
-  { value: '2–10×', description: 'lower search latency after re-architecting a production SolrCloud subsystem.' },
-  { value: '5', description: 'production releases delivered on AWS while passing third-party security audits.' },
-  { value: '2 mo.', description: 'ahead of schedule for core mapping, workflow, and authentication capabilities.' },
+  {
+    value: '10–100×',
+    description: 'throughput improvement across critical backend and client processing paths.',
+  },
+  {
+    value: '2–10×',
+    description: 'lower search latency after re-architecting a production SolrCloud subsystem.',
+  },
+  {
+    value: '5',
+    description: 'production releases delivered on AWS while passing third-party security audits.',
+  },
+  {
+    value: '2 mo.',
+    description: 'ahead of schedule for core mapping, workflow, and authentication capabilities.',
+  },
 ] as const
 
 export type Role = {
@@ -88,7 +111,8 @@ export const roles: ReadonlyArray<Role> = [
     qualifier: '(DevSecOps)',
     company: 'SHLD, Inc. · Herndon, VA',
     current: true,
-    summary: 'Building the deployment tooling and streaming backbone behind an enterprise data-collection platform used by multiple application teams.',
+    summary:
+      'Building the deployment tooling and streaming backbone behind an enterprise data-collection platform used by multiple application teams.',
     impact: [
       'Architected enterprise-wide CDC pipelines with Debezium and Apache Flink for real-time platform data streaming.',
       'Standardized Kubernetes/OpenShift deployments with reusable Helm patterns for RBAC, ConfigMaps, and secrets.',
@@ -102,7 +126,8 @@ export const roles: ReadonlyArray<Role> = [
     note: 'Lead engineer · as needed',
     title: 'Cloud Solutions Architect',
     company: 'Navstar Inc. · Reston, VA',
-    summary: 'Leading application modernization from ideation through production, with an emphasis on AWS-native systems and high-throughput application architecture.',
+    summary:
+      'Leading application modernization from ideation through production, with an emphasis on AWS-native systems and high-throughput application architecture.',
     impact: [
       'Migrated a legacy J2EE monolith to AWS Lambda, Step Functions, SQS, S3, and API Gateway—lowering cost and improving performance.',
       'Improved critical processing throughput by 10–100× across backend and client architecture.',
@@ -116,7 +141,8 @@ export const roles: ReadonlyArray<Role> = [
     note: 'formerly The Buffalo Group',
     title: 'Lead Software Engineer',
     company: 'Jacobs Engineering Group · Reston, VA',
-    summary: 'Owned technical direction and delivery across classified and unclassified web platforms while mentoring engineers and managing the DevOps lifecycle.',
+    summary:
+      'Owned technical direction and delivery across classified and unclassified web platforms while mentoring engineers and managing the DevOps lifecycle.',
     impact: [
       'Delivered mapping, workflow, and authentication capabilities two months ahead of schedule.',
       'Modernized SOAP ingestion into scalable search pipelines using Python, Kafka, and Elasticsearch.',
@@ -129,7 +155,8 @@ export const roles: ReadonlyArray<Role> = [
     dateTime: '2015-09',
     title: 'Lead Software Engineer',
     company: 'Armedia LLC. · Vienna, VA',
-    summary: 'Architected and delivered multiple production applications for a global health organization in a fast-moving Agile environment.',
+    summary:
+      'Architected and delivered multiple production applications for a global health organization in a fast-moving Agile environment.',
     impact: [
       'Delivered five AWS production releases, improved API response times 2–3×, and passed third-party security audits.',
       'Re-architected SolrCloud search to reduce query latency by 2–10×.',
@@ -140,10 +167,30 @@ export const roles: ReadonlyArray<Role> = [
 ]
 
 export const stackGroups = [
-  { title: 'Cloud & orchestration', technologies: ['AWS', 'Kubernetes', 'OpenShift', 'Docker', 'Helm', 'Terraform', 'Ansible'] },
-  { title: 'Data & observability', technologies: ['Kafka', 'NiFi', 'Debezium', 'Apache Flink', 'Elasticsearch', 'Prometheus', 'Grafana'] },
-  { title: 'Application engineering', technologies: ['Java 21', 'Spring', 'Angular', 'React', 'Next.js', 'Node.js', 'Python'] },
-  { title: 'Delivery & security', technologies: ['Jenkins', 'GitLab CI', 'RBAC', 'IAM', 'Blue/Green', 'SonarQube', 'Artifactory'] },
+  {
+    title: 'Cloud & orchestration',
+    technologies: ['AWS', 'Kubernetes', 'OpenShift', 'Docker', 'Helm', 'Terraform', 'Ansible'],
+  },
+  {
+    title: 'Data & observability',
+    technologies: [
+      'Kafka',
+      'NiFi',
+      'Debezium',
+      'Apache Flink',
+      'Elasticsearch',
+      'Prometheus',
+      'Grafana',
+    ],
+  },
+  {
+    title: 'Application engineering',
+    technologies: ['Java 21', 'Spring', 'Angular', 'React', 'Next.js', 'Node.js', 'Python'],
+  },
+  {
+    title: 'Delivery & security',
+    technologies: ['Jenkins', 'GitLab CI', 'RBAC', 'IAM', 'Blue/Green', 'SonarQube', 'Artifactory'],
+  },
 ] as const
 
 export const aboutDetails = [
