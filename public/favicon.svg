@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Maksud Sharif</title>
+  <defs>
+    <linearGradient id="background" x1="72" y1="48" x2="440" y2="464" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172638" />
+      <stop offset="0.48" stop-color="#0d131d" />
+      <stop offset="1" stop-color="#080b10" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(112 92) rotate(43) scale(310)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5aa7ff" stop-opacity="0.24" />
+      <stop offset="1" stop-color="#5aa7ff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="monogram" x1="106" y1="150" x2="413" y2="367" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5f7fa" />
+      <stop offset="0.52" stop-color="#b9dcff" />
+      <stop offset="1" stop-color="#5aa7ff" />
+    </linearGradient>
+  </defs>
+
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#background)" />
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#glow)" />
+  <rect x="27" y="27" width="458" height="458" rx="101" fill="none" stroke="#5aa7ff" stroke-opacity="0.52" stroke-width="8" />
+
+  <path d="M82 362V150h43l49 91 49-91h43v212h-47V244l-30 58h-30l-30-58v118H82Z" fill="url(#monogram)" />
+  <path d="M422 190c-23-31-73-40-105-17-32 24-24 62 13 77l55 23c39 16 45 62 10 84-35 22-88 11-112-23" fill="none" stroke="url(#monogram)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" />
+
+  <circle cx="419" cy="104" r="13" fill="#6ee7b7" />
+  <circle cx="419" cy="104" r="23" fill="none" stroke="#6ee7b7" stroke-opacity="0.18" stroke-width="8" />
+</svg>
