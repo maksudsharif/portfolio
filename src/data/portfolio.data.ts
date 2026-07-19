@@ -1,8 +1,8 @@
 export const profile = {
   name: 'Maksud Sharif',
   initials: 'MS',
-  role: 'Senior Cloud Engineer · DevSecOps',
-  shortRole: 'Cloud / DevSecOps',
+  role: 'Senior Software Engineer · Cloud & DevSecOps',
+  shortRole: 'Software / Cloud Engineering',
   email: 'maksudsharif@gmail.com',
   linkedIn: 'https://linkedin.com/in/maksudsharif',
   github: 'https://github.com/maksudsharif',
@@ -15,15 +15,15 @@ export const profile = {
 
 export const hero = {
   availability: 'Available for the right mission',
-  headingPrefix: 'I build secure cloud platforms that teams can ',
-  headingAccent: 'trust.',
-  lead: 'I architect, automate, and operate mission-critical cloud-native systems—from AWS and Kubernetes platforms to real-time data pipelines and production SRE.',
+  headingPrefix: 'I build production software that teams can ',
+  headingAccent: 'ship with confidence.',
+  lead: 'I design and deliver full-stack enterprise applications and cloud-native systems—from Java and TypeScript code through AWS architecture, CI/CD, and production SRE.',
   metrics: [
-    { value: '10+', label: 'Years engineering' },
-    { value: '10–100×', label: 'Throughput gains' },
+    { value: '10+', label: 'Years building software' },
+    { value: '10–100×', label: 'Processing throughput' },
     { value: '2–10×', label: 'Lower query latency' },
   ],
-  technologies: ['AWS', 'Kubernetes', 'OpenShift', 'Java', 'Kafka', 'Terraform'],
+  technologies: ['Java', 'Spring Boot', 'TypeScript', 'React', 'AWS', 'Kubernetes'],
 } as const
 
 export type CapabilityIcon = 'cloud' | 'security' | 'observability'
@@ -38,34 +38,38 @@ export const capabilities: ReadonlyArray<{
 }> = [
   {
     number: '01',
-    title: 'Cloud platforms',
+    title: 'Software engineering',
     description:
-      'Secure, scalable AWS and Kubernetes foundations designed around developer experience, cost, and production reality.',
-    bullets: ['AWS serverless architecture', 'Kubernetes & OpenShift', 'Terraform, Helm & Ansible'],
-    icon: 'cloud',
-  },
-  {
-    number: '02',
-    title: 'DevSecOps enablement',
-    description:
-      'Self-service delivery systems that encode security, reduce toil, and help teams ship confidently across environments.',
+      'Full-stack applications and distributed services engineered across the SDLC, from system design and implementation through testing and production.',
     bullets: [
-      'CI/CD & blue/green delivery',
-      'RBAC, IAM & secret management',
-      'Reusable platform tooling',
+      'Java 21, Spring Boot & Python',
+      'TypeScript, React & Next.js',
+      'APIs, search & data-intensive systems',
     ],
-    icon: 'security',
+    icon: 'cloud',
     featured: true,
   },
   {
-    number: '03',
-    title: 'Streaming & SRE',
+    number: '02',
+    title: 'Cloud-native architecture',
     description:
-      'Observable distributed systems with real-time data movement, proactive alerting, and operational discipline built in.',
+      'Secure application architectures that modernize legacy systems and use AWS, Kubernetes, and event-driven patterns to scale.',
     bullets: [
-      'Kafka, NiFi, Flink & Debezium',
-      'Prometheus & Alertmanager',
-      'Runbooks & incident response',
+      'AWS serverless applications',
+      'Kubernetes & OpenShift',
+      'Kafka, Flink & Elasticsearch',
+    ],
+    icon: 'security',
+  },
+  {
+    number: '03',
+    title: 'Delivery, security & SRE',
+    description:
+      'Production ownership built into the software lifecycle with automated delivery, least-privilege security, observability, and incident response.',
+    bullets: [
+      'CI/CD & blue/green deployments',
+      'RBAC, IAM & security hardening',
+      'Observability & production operations',
     ],
     icon: 'observability',
   },
@@ -74,7 +78,7 @@ export const capabilities: ReadonlyArray<{
 export const outcomes = [
   {
     value: '10–100×',
-    description: 'throughput improvement across critical backend and client processing paths.',
+    description: 'higher throughput after optimizing critical backend and client architecture.',
   },
   {
     value: '2–10×',
@@ -86,7 +90,7 @@ export const outcomes = [
   },
   {
     value: '2 mo.',
-    description: 'ahead of schedule for core mapping, workflow, and authentication capabilities.',
+    description: 'ahead of schedule shipping mapping, workflow, and authentication features.',
   },
 ] as const
 
@@ -112,7 +116,7 @@ export const roles: ReadonlyArray<Role> = [
     company: 'SHLD, Inc. · Herndon, VA',
     current: true,
     summary:
-      'Building the deployment tooling and streaming backbone behind an enterprise data-collection platform used by multiple application teams.',
+      'Building and operating the deployment tooling and core streaming infrastructure that multiple application teams depend on to collect and disseminate data at enterprise scale.',
     impact: [
       'Architected enterprise-wide CDC pipelines with Debezium and Apache Flink for real-time platform data streaming.',
       'Standardized Kubernetes/OpenShift deployments with reusable Helm patterns for RBAC, ConfigMaps, and secrets.',
@@ -127,7 +131,7 @@ export const roles: ReadonlyArray<Role> = [
     title: 'Cloud Solutions Architect',
     company: 'Navstar Inc. · Reston, VA',
     summary:
-      'Leading application modernization from ideation through production, with an emphasis on AWS-native systems and high-throughput application architecture.',
+      'Leading design and implementation from ideation through production while modernizing legacy systems into cloud-native serverless applications on AWS.',
     impact: [
       'Migrated a legacy J2EE monolith to AWS Lambda, Step Functions, SQS, S3, and API Gateway—lowering cost and improving performance.',
       'Improved critical processing throughput by 10–100× across backend and client architecture.',
@@ -142,7 +146,7 @@ export const roles: ReadonlyArray<Role> = [
     title: 'Lead Software Engineer',
     company: 'Jacobs Engineering Group · Reston, VA',
     summary:
-      'Owned technical direction and delivery across classified and unclassified web platforms while mentoring engineers and managing the DevOps lifecycle.',
+      'Owned direction, capabilities, and delivery of web-based solutions—partnering with customers, writing code, mentoring engineers, and managing the DevOps lifecycle across multiple applications.',
     impact: [
       'Delivered mapping, workflow, and authentication capabilities two months ahead of schedule.',
       'Modernized SOAP ingestion into scalable search pipelines using Python, Kafka, and Elasticsearch.',
@@ -156,7 +160,7 @@ export const roles: ReadonlyArray<Role> = [
     title: 'Lead Software Engineer',
     company: 'Armedia LLC. · Vienna, VA',
     summary:
-      'Architected and delivered multiple production applications for a global health organization in a fast-moving Agile environment.',
+      'Architect and tech lead driving design, implementation, testing, and deployment of multiple production applications for a global health organization.',
     impact: [
       'Delivered five AWS production releases, improved API response times 2–3×, and passed third-party security audits.',
       'Re-architected SolrCloud search to reduce query latency by 2–10×.',
@@ -168,28 +172,28 @@ export const roles: ReadonlyArray<Role> = [
 
 export const stackGroups = [
   {
-    title: 'Cloud & orchestration',
-    technologies: ['AWS', 'Kubernetes', 'OpenShift', 'Docker', 'Helm', 'Terraform', 'Ansible'],
+    title: 'Languages & frameworks',
+    technologies: ['Java 21', 'Spring Boot', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python'],
   },
   {
-    title: 'Data & observability',
+    title: 'Data & distributed systems',
     technologies: [
       'Kafka',
-      'NiFi',
-      'Debezium',
-      'Apache Flink',
       'Elasticsearch',
-      'Prometheus',
-      'Grafana',
+      'SolrCloud',
+      'PostgreSQL',
+      'Neo4j',
+      'Redis',
+      'Apache Flink',
     ],
   },
   {
-    title: 'Application engineering',
-    technologies: ['Java 21', 'Spring', 'Angular', 'React', 'Next.js', 'Node.js', 'Python'],
+    title: 'Cloud & DevOps',
+    technologies: ['AWS', 'Kubernetes', 'OpenShift', 'Docker', 'Helm', 'Terraform', 'Ansible'],
   },
   {
-    title: 'Delivery & security',
-    technologies: ['Jenkins', 'GitLab CI', 'RBAC', 'IAM', 'Blue/Green', 'SonarQube', 'Artifactory'],
+    title: 'Delivery, security & SRE',
+    technologies: ['Jenkins', 'GitLab CI', 'RBAC', 'IAM', 'Prometheus', 'Grafana', 'Blue/Green'],
   },
 ] as const
 
