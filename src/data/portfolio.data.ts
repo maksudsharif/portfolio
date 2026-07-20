@@ -53,11 +53,11 @@ export const capabilities: ReadonlyArray<{
     number: '02',
     title: 'Cloud-native architecture',
     description:
-      'Secure application architectures that modernize legacy systems and use AWS, Kubernetes, and event-driven patterns to scale.',
+      'Secure application architectures that modernize legacy systems with serverless platforms, container orchestration, and event-driven patterns.',
     bullets: [
-      'AWS serverless applications',
-      'Kubernetes & OpenShift',
-      'Kafka, Flink & Elasticsearch',
+      'Serverless application platforms',
+      'Container orchestration',
+      'Event streaming, processing & search',
     ],
     icon: 'security',
   },
