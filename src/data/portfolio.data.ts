@@ -26,7 +26,7 @@ export const hero = {
   technologies: ['Java', 'Spring Boot', 'TypeScript', 'React', 'AWS', 'Kubernetes'],
 } as const
 
-export type CapabilityIcon = 'cloud' | 'security' | 'observability'
+export type CapabilityIcon = 'code' | 'cloud' | 'operations'
 
 export const capabilities: ReadonlyArray<{
   number: string
@@ -46,7 +46,7 @@ export const capabilities: ReadonlyArray<{
       'TypeScript, React & Next.js',
       'APIs, search & data-intensive systems',
     ],
-    icon: 'cloud',
+    icon: 'code',
     featured: true,
   },
   {
@@ -59,7 +59,7 @@ export const capabilities: ReadonlyArray<{
       'Container orchestration',
       'Event streaming, processing & search',
     ],
-    icon: 'security',
+    icon: 'cloud',
   },
   {
     number: '03',
@@ -71,7 +71,7 @@ export const capabilities: ReadonlyArray<{
       'RBAC, IAM & security hardening',
       'Observability & production operations',
     ],
-    icon: 'observability',
+    icon: 'operations',
   },
 ]
 

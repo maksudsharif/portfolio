@@ -1,4 +1,24 @@
-import type { ReactNode } from 'react'
+import {
+  Activity,
+  ArrowRight,
+  ArrowUpRight,
+  ChevronRight,
+  CloudCog,
+  Code2,
+  Container,
+  Database,
+  Download,
+  Mail,
+  Menu,
+  Network,
+  PanelsTopLeft,
+  Quote,
+  ServerCog,
+  Terminal,
+  UsersRound,
+  X,
+  type LucideIcon,
+} from 'lucide-react'
 import {
   aboutDetails,
   capabilities,
@@ -10,38 +30,16 @@ import {
   type CapabilityIcon,
 } from './data/portfolio.data'
 
-type IconProps = {
-  children: ReactNode
-  className?: string
+const capabilityIcons: Record<CapabilityIcon, LucideIcon> = {
+  code: Code2,
+  cloud: CloudCog,
+  operations: Activity,
 }
 
-function Icon({ children, className }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
-      {children}
-    </svg>
-  )
-}
+function CapabilityGlyph({ icon }: { icon: CapabilityIcon }) {
+  const Glyph = capabilityIcons[icon]
 
-const capabilityIcons: Record<CapabilityIcon, ReactNode> = {
-  cloud: (
-    <>
-      <path d="M6 19a4 4 0 0 1-.5-8A7 7 0 0 1 19 9.5 4.5 4.5 0 0 1 18.5 19H6Z" />
-      <path d="m9 15 3-3 3 3m-3-3v7" />
-    </>
-  ),
-  security: (
-    <>
-      <path d="M12 3 5 6v5c0 4.6 2.8 8 7 10 4.2-2 7-5.4 7-10V6l-7-3Z" />
-      <path d="m8 12 2.5 2.5L16 9" />
-    </>
-  ),
-  observability: (
-    <>
-      <path d="M4 18V9m5 9V5m5 13v-7m5 7V3" />
-      <path d="M3 21h18" />
-    </>
-  ),
+  return <Glyph aria-hidden="true" />
 }
 
 function Header() {
@@ -73,16 +71,13 @@ function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            Résumé{' '}
-            <Icon>
-              <path d="M7 17 17 7M8 7h9v9" />
-            </Icon>
+            Résumé
+            <ArrowUpRight aria-hidden="true" />
           </a>
           <details className="mobile-menu">
             <summary aria-label="Open navigation menu">
-              <Icon>
-                <path d="M4 7h16M4 12h16M4 17h16" />
-              </Icon>
+              <Menu className="menu-open-icon" aria-hidden="true" />
+              <X className="menu-close-icon" aria-hidden="true" />
             </summary>
             <nav aria-label="Mobile navigation">
               <a href="#expertise">Expertise</a>
@@ -100,34 +95,10 @@ function Header() {
 
 function PlatformVisual() {
   const services = [
-    [
-      'Backend',
-      'Java 21 · Spring Boot',
-      <>
-        <path d="M5 7h14M7 4v6m10-6v6M4 14h6v6H4zm10 0h6v6h-6z" />
-      </>,
-    ],
-    [
-      'Frontend',
-      'React · TypeScript',
-      <>
-        <path d="M4 17V9m5 8V5m5 12v-7m5 7V3M3 21h18" />
-      </>,
-    ],
-    [
-      'Data',
-      'PostgreSQL · Neo4j',
-      <>
-        <path d="M12 3 5 6v5c0 4.6 2.8 8 7 10 4.2-2 7-5.4 7-10V6l-7-3Zm-3 9 2 2 4-5" />
-      </>,
-    ],
-    [
-      'Delivery',
-      'AWS · Docker · Jenkins',
-      <>
-        <path d="M4 6h16v12H4zM8 10l2 2-2 2m4 0h4" />
-      </>,
-    ],
+    { title: 'Backend', subtitle: 'Java 21 · Spring Boot', icon: ServerCog },
+    { title: 'Frontend', subtitle: 'React · TypeScript', icon: PanelsTopLeft },
+    { title: 'Data', subtitle: 'PostgreSQL · Neo4j', icon: Database },
+    { title: 'Delivery', subtitle: 'AWS · Docker · Jenkins', icon: Container },
   ] as const
 
   return (
@@ -152,9 +123,7 @@ function PlatformVisual() {
         </div>
         <div className="core-node">
           <div className="node-icon">
-            <Icon>
-              <path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Zm0 0v9m8-4.5-8 4.5-8-4.5m8 13v-9" />
-            </Icon>
+            <Network aria-hidden="true" />
           </div>
           <div>
             <span className="mono muted">APPLICATION ARCHITECTURE</span>
@@ -165,10 +134,10 @@ function PlatformVisual() {
           </span>
         </div>
         <div className="service-grid">
-          {services.map(([title, subtitle, icon]) => (
+          {services.map(({ title, subtitle, icon: ServiceIcon }) => (
             <article key={title}>
               <span className="service-icon">
-                <Icon>{icon}</Icon>
+                <ServiceIcon aria-hidden="true" />
               </span>
               <div>
                 <strong>{title}</strong>
@@ -210,10 +179,8 @@ function Hero() {
           <p className="hero-lede">{hero.lead}</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#experience">
-              See my impact{' '}
-              <Icon>
-                <path d="m9 18 6-6-6-6" />
-              </Icon>
+              See my impact
+              <ChevronRight aria-hidden="true" />
             </a>
             <a
               className="button button-secondary"
@@ -221,10 +188,8 @@ function Hero() {
               target="_blank"
               rel="noreferrer"
             >
-              View résumé{' '}
-              <Icon>
-                <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
-              </Icon>
+              View résumé
+              <Download aria-hidden="true" />
             </a>
           </div>
           <dl className="hero-metrics" aria-label="Career highlights">
@@ -272,7 +237,7 @@ function Expertise() {
             >
               <span className="card-number">{capability.number}</span>
               <div className="capability-icon">
-                <Icon>{capabilityIcons[capability.icon]}</Icon>
+                <CapabilityGlyph icon={capability.icon} />
               </div>
               <h3>{capability.title}</h3>
               <p>{capability.description}</p>
@@ -301,7 +266,7 @@ function Proof() {
             secure production delivery—with results that show up in the numbers.
           </p>
           <a className="arrow-link" href="#experience">
-            Explore the work <span aria-hidden="true">→</span>
+            Explore the work <ArrowRight aria-hidden="true" />
           </a>
         </div>
         <div className="proof-grid">
@@ -386,9 +351,7 @@ function Stack() {
             infrastructure, security, and operations into one coherent engineering practice.
           </p>
           <div className="stack-note">
-            <Icon>
-              <path d="M4 5h16v14H4zM8 9l2 3-2 3m5 0h3" />
-            </Icon>
+            <Terminal aria-hidden="true" />
             <span>
               <strong>Still hands-on.</strong> Java, TypeScript, Python, Bash, and SQL.
             </span>
@@ -440,9 +403,7 @@ function About() {
           </div>
         </div>
         <blockquote>
-          <Icon>
-            <path d="M7 17H4a2 2 0 0 1-2-2v-3a7 7 0 0 1 7-7v3a4 4 0 0 0-4 4h2v5Zm12 0h-3a2 2 0 0 1-2-2v-3a7 7 0 0 1 7-7v3a4 4 0 0 0-4 4h2v5Z" />
-          </Icon>
+          <Quote aria-hidden="true" />
           <p>Design it. Build it. Test it. Deploy it. Operate it.</p>
           <footer>My software engineering philosophy</footer>
         </blockquote>
@@ -464,10 +425,8 @@ function Contact() {
         </p>
         <div className="contact-actions">
           <a className="button button-light" href={`mailto:${profile.email}`}>
-            Start a conversation{' '}
-            <Icon>
-              <path d="M4 6h16v12H4zM4 7l8 6 8-6" />
-            </Icon>
+            Start a conversation
+            <Mail aria-hidden="true" />
           </a>
           <a
             className="button button-outline-light"
@@ -476,6 +435,7 @@ function Contact() {
             rel="noreferrer"
           >
             Connect on LinkedIn
+            <UsersRound aria-hidden="true" />
           </a>
         </div>
       </div>
@@ -527,16 +487,20 @@ export default function App() {
         Skip to main content
       </a>
       <Header />
-      <main id="main-content">
-        <Hero />
-        <Expertise />
-        <Proof />
-        <Experience />
-        <Stack />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <main id="main-content" tabIndex={-1}>
+            <Hero />
+            <Expertise />
+            <Proof />
+            <Experience />
+            <Stack />
+            <About />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </div>
     </>
   )
 }
