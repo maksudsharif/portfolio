@@ -260,10 +260,10 @@ function Proof() {
       <div className="shell proof-layout">
         <div className="proof-copy">
           <p className="overline">Selected outcomes</p>
-          <h2 id="proof-heading">Measured in performance, delivery, and scale.</h2>
+          <h2 id="proof-heading">Engineering that moves the numbers.</h2>
           <p>
-            The work spans new application features, legacy modernization, backend optimization, and
-            secure production delivery—with results that show up in the numbers.
+            I modernize high-stakes software from architecture through production—making systems
+            faster, releases safer, and delivery more predictable.
           </p>
           <a className="arrow-link" href="#experience">
             Explore the work <ArrowRight aria-hidden="true" />

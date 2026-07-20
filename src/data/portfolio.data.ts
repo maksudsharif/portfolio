@@ -77,20 +77,22 @@ export const capabilities: ReadonlyArray<{
 
 export const outcomes = [
   {
-    value: '10–100×',
-    description: 'higher throughput after optimizing critical backend and client architecture.',
+    value: 'Up to 100×',
+    description:
+      'greater processing throughput after optimizing critical backend and client architecture.',
   },
   {
-    value: '2–10×',
-    description: 'lower search latency after re-architecting a production SolrCloud subsystem.',
+    value: 'Up to 10×',
+    description: 'faster production search after re-architecting a SolrCloud subsystem.',
   },
   {
-    value: '5',
-    description: 'production releases delivered on AWS while passing third-party security audits.',
+    value: '2–3×',
+    description:
+      'faster API responses across five AWS releases that passed independent security audits.',
   },
   {
-    value: '2 mo.',
-    description: 'ahead of schedule shipping mapping, workflow, and authentication features.',
+    value: '2 months',
+    description: 'ahead of schedule delivering mapping, workflow, and authentication capabilities.',
   },
 ] as const
 
