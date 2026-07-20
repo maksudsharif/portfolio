@@ -71,8 +71,11 @@ if (!reducedMotion.matches) {
     })
   })
 
-  gsap.from('.capability-card', {
+  const capabilityCards = gsap.utils.toArray<HTMLElement>('.capability-card')
+
+  gsap.from(capabilityCards, {
     ...revealDefaults,
+    onComplete: () => gsap.set(capabilityCards, { clearProps: 'transform' }),
     scale: 0.985,
     stagger: 0.12,
     scrollTrigger: {
